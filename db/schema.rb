@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_153407) do
+ActiveRecord::Schema.define(version: 2021_11_23_154035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_153407) do
     t.index ["user_id"], name: "index_dinners_on_user_id"
   end
 
-  create_table "menu_items", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.integer "price"
     t.string "name"
     t.text "description"
@@ -44,11 +44,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_153407) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "menu_item_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["menu_item_id"], name: "index_orders_on_menu_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -76,8 +74,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_153407) do
 
   add_foreign_key "dinners", "tables"
   add_foreign_key "dinners", "users"
-  add_foreign_key "order_items", "menu_items"
+  add_foreign_key "order_items", "items", column: "menu_item_id"
   add_foreign_key "order_items", "orders"
-  add_foreign_key "orders", "menu_items"
   add_foreign_key "orders", "users"
 end
