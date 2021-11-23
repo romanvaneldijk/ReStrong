@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if current_user %>
+<h1>Hello <%= current_user.first_name%></h1>
+<%end %>
+<h1>Welcome to TicoTaco</h1>
+<%= button_to "MENU", menu_path, method: :get%>
+<p>Powered by ReStrong</p>
