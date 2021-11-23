@@ -1,12 +1,17 @@
 <div class="container">
-  <h1>Menu</h1>
-  <ul>
-    <% @menu_items.each do |menu_item| %>
-      <li>
-      <%= menu_item.name %>
-      <%= menu_item.description %>
-      <%= menu_item.price %>
-      </li>
-    <% end %>
-  </ul>
+  <div>
+    <h1>Menu</h1>
+    <ul>
+      <% @menu_items.each do |menu_item| %>
+        <li>
+        <p><strong>Name: </strong> <%= menu_item.name %>
+        <strong>Description: </strong><%= menu_item.description %>
+        <strong>Price: </strong> <%= menu_item.price %>€</p>
+        </li>
+      <% end %>
+    </ul>
+    <div>
+      <%= link_to "CONFIRM", "order", class: "button" %>
+    </div>
+  </div>
 </div>
