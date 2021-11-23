@@ -1,0 +1,7 @@
+<h1>Your Order</h1>
+<% @menu_items.each do |menu_item| %>
+  <p>
+    <%= menu_item.name %>
+    <%= menu_item.description %>
+  </p>
+<% end %>
