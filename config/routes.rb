@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # resources :menu_items, only: [:index]
   get "/menu", to: "menu_items#index"
-  resources :orders, only: [:show]
+  get "/order", to: "orders#show"
+  get "/order/checkout", to: "checkout#show"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
