@@ -3,9 +3,9 @@
   <ul>
     <% @menu_items.each do |menu_item| %>
       <li>
-      <%= menu_item.name %>
-      <%= menu_item.description %>
-      <%= menu_item.price %>
+      <p><strong>Name: </strong> <%= menu_item.name %>
+      <strong>Description: </strong><%= menu_item.description %>
+      <strong>Price: </strong> <%= menu_item.price %>€</p>
       </li>
     <% end %>
   </ul>
