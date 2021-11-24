@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 2021_11_24_153016) do
     t.index ["user_id"], name: "index_dinners_on_user_id"
   end
 
-  create_table "item_categories", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
-  end
-
   create_table "items", force: :cascade do |t|
     t.float "price"
     t.text "description"
