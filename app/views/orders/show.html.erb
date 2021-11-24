@@ -1,7 +1,14 @@
 <h1>Your Order</h1>
-<% @items.each do |item| %>
-  <p>
-    <%= item.name %>
-    <%= item.description %>
-  </p>
+<% @order.items.each do |item| %>
+  <li><%= item.name %>- <%= item.price %> euros
+      <%= link_to order_item_path(item_id: item), method: :delete, class: "btn btn-danger" do %>
+        "delete item" <i class="fas fa-cart-plus"></i>
+      <% end %>
+  </li>
+
 <% end %>
+
+<%= link_to order_path(@order), method: :delete, class: "btn btn-danger" do %>
+        "delete my order" <i class="fas fa-cart-plus"></i>
+      <% end %>
+<%= link_to "confirm my order", order_path(@order), method: :patch, class:"btn btn-primary" %>
