@@ -1,17 +1,15 @@
-<div class="container">
-  <div>
-    <h1>Menu</h1>
-    <ul>
-      <% @items.each do |item| %>
-        <li>
+<div class="cards">
+  <h1>Menu</h1>
+  <% @items.each do |item| %>
+    <div class="card-product">
+      <div class="card-product-infos">
         <p><strong>Name: </strong> <%= item.name %>
         <strong>Description: </strong><%= item.description %>
         <strong>Price: </strong> <%= item.price %>€</p>
-        </li>
-      <% end %>
-    </ul>
-    <div>
-      <%= link_to "CONFIRM", "order", class: "button" %>
+      </div>
     </div>
-  </div>
+  <% end %>
+</div>
+<div class="d-flex justify-content-center">
+  <%= link_to "CONFIRM", "order", class: "button" %>
 </div>
