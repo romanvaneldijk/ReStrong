@@ -1,7 +1,6 @@
 <h1>Your Order</h1>
-<% @items.each do |item| %>
-  <p>
-    <%= item.name %>
-    <%= item.description %>
-  </p>
+<% @order.items.each do |item| %>
+  <li><%= item.name %>- <%= item.price %> euros</li>
 <% end %>
+
+<%= link_to "confirm my order", order_path(@order), method: :patch, class:"btn btn-primary" %>
