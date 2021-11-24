@@ -5,6 +5,7 @@ class TablesController < ApplicationController
 
   def create
     @table = Table.new(table_params)
+    @table.qr_code = "localhost:3000/tables/#{@table.table_number}/dinners/new"
     if @table.save
       redirect_to root_path
     else
@@ -26,6 +27,6 @@ class TablesController < ApplicationController
 
   private
   def table_params
-    params.require(:table).permit(:table_number, :qr_code)
+    params.require(:table).permit(:table_number)
   end
 end
