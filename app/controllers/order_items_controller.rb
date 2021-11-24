@@ -10,4 +10,11 @@ class OrderItemsController < ApplicationController
     end
     OrderItem.create(order: @order, item: @item)
   end
+
+  def destroy
+    @user = current_user
+    @item = Item.find(params[:item_id])
+    @order_item = OrderItem.find_by(item: @item)
+    @order_item.destroy
+  end
 end
