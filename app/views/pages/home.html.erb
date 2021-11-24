@@ -2,5 +2,7 @@
 <h1>Hello <%= current_user.first_name%></h1>
 <%end %>
 <h1>Welcome to TicoTaco</h1>
-<%= button_to "MENU", menu_path, method: :get%>
+<div class="d-flex justify-content-center">
+  <%= link_to "Menu", menu_path, class: "button" %>
+</div>
 <p>Powered by ReStrong</p>
