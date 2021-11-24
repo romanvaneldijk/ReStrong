@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class CheckoutController < ApplicationController
   def show
     @items = current_user.order_items
   end

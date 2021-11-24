@@ -1,0 +1,7 @@
+<h1>Your Order</h1>
+<% @items.each do |item| %>
+  <p>
+    <%= item.name %>
+    <%= item.description %>
+  </p>
+<% end %>

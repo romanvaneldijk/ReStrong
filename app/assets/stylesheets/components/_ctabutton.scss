@@ -1,0 +1,22 @@
+.button {
+  // flex-direction: column;
+  padding: 16px 32px;
+  height: 51px;
+  // left: 15px;
+  // right: 17px;
+  // bottom: 22px;
+  background: #2A9D8F;
+  border-radius: 100px;
+  color: white;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: white;
+  background: #17524b;
+}
+
+.center-button {
+  align-items: center !important;
+
+}
