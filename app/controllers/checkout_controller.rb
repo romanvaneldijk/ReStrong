@@ -1,5 +1,5 @@
 class CheckoutController < ApplicationController
   def show
-    @menu_items = current_user.menu_items
+    @items = current_user.order_items
   end
 end
