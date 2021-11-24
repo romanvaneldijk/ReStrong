@@ -1,2 +1,6 @@
 <h1>Here is your QR-Code for table#<%= @table.table_number  %></h1>
 <%= @svg.html_safe %>
+<div>
+<%= link_to "click", "localhost:3000/tables/#{@table.table_number}/dinners/new" %>
+<%= link_to "click", new_dinner_path(@table) %>
+</div>
