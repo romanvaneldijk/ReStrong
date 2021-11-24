@@ -2,7 +2,7 @@ class DinnersController < ApplicationController
   def new
     @dinner = Dinner.new
     @dinner.user = current_user
-    @table = Table.find(params[:table_number])
+    @table = Table.find(params[:table_id])
     @dinner.table = @table
     @dinner.payment_status = false
     @dinner.save
