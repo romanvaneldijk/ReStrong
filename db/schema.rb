@@ -58,18 +58,10 @@ ActiveRecord::Schema.define(version: 2021_11_24_133456) do
   end
 
   create_table "orders", force: :cascade do |t|
-<<<<<<< HEAD
-    t.bigint "menu_item_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["menu_item_id"], name: "index_orders_on_menu_item_id"
-=======
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status", default: "processing"
->>>>>>> master
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
