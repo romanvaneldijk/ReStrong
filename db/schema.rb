@@ -44,12 +44,10 @@ ActiveRecord::Schema.define(version: 2021_11_24_142456) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "item_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status", default: "processing"
-    t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -80,6 +78,5 @@ ActiveRecord::Schema.define(version: 2021_11_24_142456) do
   add_foreign_key "dinners", "users"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
-  add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
 end
