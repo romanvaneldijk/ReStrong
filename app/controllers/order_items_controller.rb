@@ -9,6 +9,8 @@ class OrderItemsController < ApplicationController
       @order = Order.create(user: @user)
     end
     OrderItem.create(order: @order, item: @item)
+    # render 'items/index'
+    # redirect_to menu_path
   end
 
   def destroy
