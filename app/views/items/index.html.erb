@@ -2,6 +2,7 @@
   <h1>Menu</h1>
   <% @items.each do |item| %>
     <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
       <div class="card-product-infos">
         <p><strong>Name: </strong> <%= item.name %>
         <strong>Description: </strong><%= item.description %>
@@ -13,11 +14,9 @@
       </div>
     </div>
   <% end %>
-
-</div>
-
-<div class="d-flex justify-content-center">
-  <% if @order.present? %>
-    <%= link_to "My Order", order_path(@order) , class: "button" %>
-  <% end %>
+  <div class="d-flex justify-content-center">
+    <% if @order.present? %>
+      <%= link_to "My Order", order_path(@order) , class: "button" %>
+    <% end %>
+  </div>
 </div>

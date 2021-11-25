@@ -1,6 +1,7 @@
 .cards {
   flex-direction: row;
   align-items: stretch;
+  background-color: #E5E5E5;
 }
 
 .cards h1 {
@@ -10,12 +11,15 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: #D9DBF1;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-top: 10px;
   border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
 }
 
 .card-product-infos {
