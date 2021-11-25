@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 2021_11_25_115415) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.float "price", null: false
-    t.text "description", null: false
-    t.string "name", null: false
+    t.float "price"
+    t.text "description"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "imageurl", null: false
+    t.string "imageurl"
   end
 
   create_table "order_items", force: :cascade do |t|
