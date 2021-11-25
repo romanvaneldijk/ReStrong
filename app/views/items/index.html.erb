@@ -6,17 +6,27 @@
     <div class="card-product">
     <% if item.imageurl? %>
     <img src="<%= item.imageurl %>"/>
-    <% else src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="%>
+    <% else%>
+    <img src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
     <% end %>
+      <div class="card-stuff">
       <div class="card-product-infos">
-        <p><strong>Name: </strong> <%= item.name %>
-        <strong>Description: </strong><%= item.description %>
-        <strong>Price: </strong> <%= item.price %>€
-        <%= link_to order_items_path(item_id: item), method: :post, class: "btn btn-primary" do %>
-         <i class="fas fa-cart-plus"></i>
-        <% end %>
+        <div class="dish-info">
+          <div class="push-button-right">
+            <p><strong><%= item.name %></strong> <br>
+            <%= item.description %>
+          </div>
+        </div>
+        <strong><%= item.price %>€</strong>
         </p>
       </div>
+      <div class="button-bottom">
+        <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
+                <i class="fas fa-cart-plus"></i>
+          <% end %>
+        </div>
+    </div>
+
     </div>
   <% end %>
   <div class="d-flex justify-content-center">
