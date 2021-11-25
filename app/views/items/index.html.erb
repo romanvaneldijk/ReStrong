@@ -1,31 +1,37 @@
-<div>
-  <div class="cards">
-    <div class="menu">
+<div class="cards">
+  <div class="menu">
     <strong><h1>Menu</h1></strong>
-    </div>
-    <% @items.each do |item| %>
-      <div class="card-product">
+  </div>
+  <% @items.each do |item| %>
+    <div class="card-product">
       <% if item.imageurl? %>
-      <img src="<%= item.imageurl %>"/>
-      <% else src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="%>
+        <img src="<%= item.imageurl %>"/>
+      <% else %>
+        <img src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
       <% end %>
+      <div class="card-stuff">
         <div class="card-product-infos">
-          <p><strong>Name: </strong> <%= item.name %>
-          <strong>Description: </strong><%= item.description %>
-          <strong>Price: </strong> <%= item.price %>€
-          <%= link_to order_items_path(item_id: item), method: :post, remote: true, class: "btn btn-primary" do %>
-          <i class="fas fa-cart-plus"></i>
+          <div class="dish-info">
+            <div class="push-button-right">
+              <p>
+                <strong><%= item.name %></strong> <br>
+                <%= item.description %>
+              </p>
+            </div>
+          </div>
+          <strong><%= item.price %>€</strong>
+        </div>
+        <div class="button-bottom">
+          <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
+            <i class="fas fa-cart-plus"></i>
           <% end %>
-          </p>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
   <% if @order.present? %>
-      <div class="d-flex justify-content-center">
-        <%= link_to "My Order", order_path(@order), class: "button" %>
-      </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "My Order", order_path(@order), class: "button" %>
+    </div>
   <% end %>
 </div>
-
-<%# , data { show_my_order_target:'order' } %>
