@@ -7,7 +7,7 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
     @table.qr_code = "localhost:3000/tables/#{@table.table_number}/dinners/new"
     if @table.save
-      redirect_to root_path
+      redirect_to table_path(@table)
     else
       render :new
     end
