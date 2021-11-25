@@ -10,6 +10,9 @@ puts 'destroying items'
 Item.destroy_all
 puts 'items deleted'
 
+User.create!(email: "test@test.com", password:"123456")
+puts "created user"
+
 10.times do
   Item.create(
     price: rand(10..20.0).round(2),

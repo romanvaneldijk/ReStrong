@@ -1,0 +1,17 @@
+  <h1>HELLO</h1>
+<div>
+  <h2>my orders</h2>
+  <ul>
+    <% @orders.each do |order| %>
+      <li><%= order.item.name %></li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <h2>processing status</h2>
+</div>
+
+<div>
+<%= link_to "pay" , user_dashboard_path %>
+<%= link_to "new order" , menu_path %>
+</div>
