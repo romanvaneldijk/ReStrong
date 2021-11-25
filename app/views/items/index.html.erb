@@ -1,4 +1,4 @@
-<div class="container" data-controller="show-my-order">
+<div>
   <div class="cards">
     <div class="menu">
     <strong><h1>Menu</h1></strong>
@@ -13,21 +13,19 @@
           <p><strong>Name: </strong> <%= item.name %>
           <strong>Description: </strong><%= item.description %>
           <strong>Price: </strong> <%= item.price %>€
-          <%= link_to order_items_path(item_id: item), method: :post, class: "btn btn-primary", data: { show_my_order_target: 'button',
-          action: 'click->show-my-order#click'
-          } do %>
+          <%= link_to order_items_path(item_id: item), method: :post, remote: true, class: "btn btn-primary" do %>
           <i class="fas fa-cart-plus"></i>
           <% end %>
           </p>
         </div>
       </div>
     <% end %>
-    <% if @order.present? %>
-      <div class="d-none" data-show-my-order-target="order">
+  </div>
+  <% if @order.present? %>
+      <div class="d-flex justify-content-center">
         <%= link_to "My Order", order_path(@order), class: "button" %>
       </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 
 <%# , data { show_my_order_target:'order' } %>
