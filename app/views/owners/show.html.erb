@@ -5,7 +5,6 @@
 <div class="container">
 <div id="orders">
 <% @orders.each do |order|%>
-
   <% users_id = order.user.id%>
   <% @dinners.each do |dinner|%>
     <%=dinner.table.table_number%>
