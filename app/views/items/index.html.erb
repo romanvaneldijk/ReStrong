@@ -20,11 +20,8 @@
   </div>
 
   <% if @order.present? %>
-    <div class="d-flex justify-content-center">
+    <div class="d-none" data-show-my-order-target="order">
       <%= link_to "My Order", order_path(@order), class: "button" %>
-    </div>
-  <% else %>
-    <div class="d-flex justify-content-center" data-show-my-order-target="order">
     </div>
   <% end %>
 </div>
