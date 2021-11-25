@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # resources :menu_items, only: [:index]
+
   get "/menu", to: "items#index"
+  get "/items/new", to: "items#new", as: :new_item
+
   # get "/order", to: "orders#show"
   get "/order/checkout", to: "checkout#show"
 
