@@ -1,3 +1,12 @@
 <h1>Owner</h1>
 <%= link_to "Create a new Item", new_item_path %>
 <%= link_to "Create a new Table", new_table_path %>
+
+<div class="container">
+<div id="orders">
+<% @orders.each do |order|%>
+<%= order.user.first_name%>
+<% end %>
+
+</div>
+</div>
