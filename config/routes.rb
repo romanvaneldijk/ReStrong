@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: %i[create show update destroy]
 
-  resources :order_items, only: %i[create destroy]
+  resources :order_items, only: %i[create destroy create_menu]
   # resources :items
   resources :tables, only: [ :new, :create, :show ]
 end
