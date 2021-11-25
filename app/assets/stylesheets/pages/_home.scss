@@ -8,7 +8,9 @@
 }
 .hello-container h5 {
   margin-left: 20px;
-
+  color: white;
+  font-family: "Poppins" !important;
+  text-align: center;
 }
 .main-container {
   height: 90vh;
@@ -18,12 +20,6 @@
   align-items: center;
 }
 
-h5 {
-  color: white;
-  font-family: "Poppins" !important;
-  // margin-top: 15px;
-  // margin-left: 20px;
-}
 .homepage-title {
   color: white;
   font-family: "Poppins" !important;
