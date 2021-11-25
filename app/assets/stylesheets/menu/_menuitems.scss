@@ -1,3 +1,8 @@
+.menu {
+background-color: #E9C46A;
+height: 245px;
+}
+
 .cards {
   flex-direction: row;
   align-items: stretch;
@@ -53,4 +58,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+#addTocart {
+  background-color: #2A9D8F;
 }
