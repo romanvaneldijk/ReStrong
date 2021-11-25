@@ -1,6 +1,12 @@
+.menu {
+background-color: #E9C46A;
+height: 245px;
+}
+
 .cards {
   flex-direction: row;
   align-items: stretch;
+  background-color: #E5E5E5;
 }
 
 .cards h1 {
@@ -9,17 +15,24 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
-  background: white;
+  // height: 150px;
+  background: #D9DBF1;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-top: 10px;
   border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
 }
 
 .card-product-infos {
   color:black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
 }
 
 .card-product a:hover {
@@ -30,6 +43,9 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  margin-left: 20px;
+  border-radius: 10px;
+  border-color: #084C61 ;
 }
 
 .card-product h2 {
@@ -49,4 +65,26 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+#addTocart {
+  background-color: #2A9D8F;
+  border: none;
+  border-radius: 10px;
+  // align-items: flex-end;
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+}
+.push-button-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.button-bottom {
+  display: flex;
+  justify-content: flex-end;
 }
