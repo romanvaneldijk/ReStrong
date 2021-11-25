@@ -1,3 +1,6 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Poppins:wght@200;300;500&display=swap');
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -11,5 +14,5 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
+@import "pages/home";
 @import "menu/menuitems";

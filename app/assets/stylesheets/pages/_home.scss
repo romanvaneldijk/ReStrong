@@ -1,1 +1,74 @@
+
 // Specific CSS for your home-page
+.body {
+  background: rgb(162, 103, 105);
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+}
+.hello-container h5 {
+  margin-left: 20px;
+
+}
+.main-container {
+  height: 90vh;
+  // margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h5 {
+  color: white;
+  font-family: "Poppins" !important;
+  // margin-top: 15px;
+  // margin-left: 20px;
+}
+.homepage-title {
+  color: white;
+  font-family: "Poppins" !important;
+  text-align: center;
+  margin-bottom: 50px;
+  // margin-top: 200px;
+  // margin-bottom: 50px;
+}
+h1 {
+  color: rgb(233, 196, 106);
+  font-family: 'Holtwood One SC', serif;
+  font-size: 48px;
+  text-align: center;
+}
+h3{
+  color: rgb(8, 76, 97);
+  font-family: 'Holtwood One SC', serif;
+  font-size: 40px;
+  text-align: center;
+  // margin-top: 5px;
+  // margin-bottom: 50px;
+}
+.menu-button {
+  // flex-direction: column;
+  padding: 16px 64px;
+  height: 51px;
+  // left: 15px;
+  // right: 17px;
+  // bottom: 22px;
+  background: #2A9D8F;
+  border-radius: 100px;
+  color: white;
+  margin-top: 40px;
+}
+.fire-emoji {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+.footer {
+  color: white;
+  font-family: "Poppins";
+  text-align: right;
+  // margin-top: 100%;
+  // margin-left: 50%;
+ p {
+ margin-right: 20px;
+}
+}

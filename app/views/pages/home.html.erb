@@ -1,8 +1,21 @@
-<% if current_user %>
-<h1>Hello <%= current_user.first_name%></h1>
-<%end %>
-<h1>Welcome to TicoTaco</h1>
-<div class="d-flex justify-content-center">
-  <%= link_to "Menu", menu_path, class: "button" %>
+
+<div class= "body" >
+  <div  class= "hello-container">
+  <% if current_user %>
+    <h5>Hello <%= current_user.first_name%>!</h5>
+    <%end %>
+  </div>
+    <div class= "main-container">
+    <div class="homepage-container">
+      <h4 class= "homepage-title">Welcome to</h4>
+      <h1>"Tico-Taco"</h1>
+      <h3>🌮 Taquería 🌮</h3>
+      <div class="d-flex justify-content-center">
+          <%= link_to "Go To Menu", menu_path, class: "menu-button" %>
+      </div>
+    </div>
+  </div>
+  <div class= "footer">
+    <p>Powered by ReStrong</p>
+  </div>
 </div>
-<p>Powered by ReStrong</p>
