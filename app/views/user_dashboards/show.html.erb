@@ -1,5 +1,8 @@
-  <h1>HELLO</h1>
-<div>
+<div class="cards">
+  <div class="menu">
+  <strong><h1>Checkout</h1></strong>
+  </div>
+  <div>
   <h2>my orders</h2>
   <ul>
     <% @orders.each do |order| %>
@@ -7,26 +10,22 @@
     <% end %>
   </ul>
 </div>
-<div>
-  <h2>processing status</h2>
-</div>
-<div class="m-5">
-  <%= link_to "new order" , menu_path ,{:style=>'color:white; text-decoration:none;',:class=>'button'} %>
-</div>
-<div class="m-5">
-  <button type="button" class="button" data-toggle="modal" data-target="#FINAL">PAY</button>
+  <div class="d-flex justify-content-center">
+      <%= link_to "new order" , menu_path ,{:style=>'color:white; text-decoration:none;',:class=>'button'} %>
+      <button type="button" class="button" data-toggle="modal" data-target="#FINAL">PAY</button>
+  </div>
 </div>
 
-<div class="modal fade text-center" id="FINAL" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content border-0">
+<div class="modal fade" id="FINAL" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog-centered text-center" role="document">
+    <div class="modal-content border-0 m-2" style="border-radius: 20px;">
       <div class="modal-header border-0">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h1 >Thanks You!</h1>
+        <h1 >Thank You!</h1>
         <p class="text-muted">We hope to see you soon again!</p>
       </div>
       <div class="modal-footer border-0 justify-content-center">

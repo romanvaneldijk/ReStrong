@@ -22,16 +22,12 @@
       </div>
       <div class="button-bottom">
         <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
-                <i class="fas fa-cart-plus"></i>
+          <i class="fas fa-cart-plus"></i>
           <% end %>
+      </div>
+      <% if @order.present? %>
+        <div class="d-flex justify-content-center">
+          <%= link_to "My Order", order_path(@order), class: "button" %>
         </div>
-    </div>
-
-    </div>
-  <% end %>
-  <div class="d-flex justify-content-center">
-    <% if @order.present? %>
-      <%= link_to "My Order", order_path(@order) , class: "button" %>
-    <% end %>
+      <% end %>
   </div>
-</div>
