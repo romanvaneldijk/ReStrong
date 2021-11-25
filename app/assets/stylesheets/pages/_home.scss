@@ -28,13 +28,13 @@
   // margin-top: 200px;
   // margin-bottom: 50px;
 }
-h1 {
+.restaurant-name {
   color: rgb(233, 196, 106);
   font-family: 'Holtwood One SC', serif;
   font-size: 48px;
   text-align: center;
 }
-h3{
+.restaurant-subtitle {
   color: rgb(8, 76, 97);
   font-family: 'Holtwood One SC', serif;
   font-size: 40px;
@@ -54,10 +54,7 @@ h3{
   color: white;
   margin-top: 40px;
 }
-.fire-emoji {
-  font-size: 60px;
-  margin-bottom: 30px;
-}
+
 .footer {
   color: white;
   font-family: "Poppins";
