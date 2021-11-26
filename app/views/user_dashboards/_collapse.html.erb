@@ -13,7 +13,9 @@
       <div class="">
         <ul>
           <% @orders.each do |order| %>
-            <li><%= order.item.name %></li>
+            <% if order.status === "open"  %>
+              <li><%= order.item.name %></li>
+              <% end %>
           <% end %>
         </ul>
       </div>
@@ -33,7 +35,9 @@
         <div class="">
           <ul>
             <% @orders.each do |order| %>
+              <% if order.status === "served"  %>
               <li><%= order.item.name %></li>
+              <% end %>
             <% end %>
           </ul>
         </div>
