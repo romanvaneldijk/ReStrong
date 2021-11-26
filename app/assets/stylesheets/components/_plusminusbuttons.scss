@@ -1,7 +1,12 @@
 .minus_button {
   color: black;
+  & :hover {
+    color: $green
+  }
 }
-
 .plus_button {
-
+   color: black ;
+    & :hover {
+      color: $green
+  }
 }
