@@ -4,7 +4,7 @@
   <% price = key.price %>
   <% quantity = value %>
     <li><%= item %>- <%= price * quantity %> € (x<%= quantity %>)
-        <%= link_to order_item_path(item_id: key), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } do %>
+        <%= link_to order_item_path(item_id: key), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" }, remote: true do %>
           "delete item" <i class="fas fa-cart-plus"></i>
         <% end %>
         <%= link_to order_items_path(item_id: key), method: :post, class: "btn btn-primary" do %>

@@ -22,7 +22,7 @@
           <strong><%= item.price %>€</strong>
         </div>
         <div class="button-bottom">
-          <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
+          <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary", remote: true do %>
             <i class="fas fa-cart-plus"></i>
           <% end %>
         </div>
