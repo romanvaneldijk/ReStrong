@@ -32,14 +32,15 @@
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        <div class="">
-          <ul>
+        <div class="container">
             <% @orders.each do |order| %>
-              <% if order.status === "served"  %>
-              <li><%= order.item.name %></li>
+              <% if order.status.nil?  %>
+                <div class="d-flex justify-content-between">
+                <%= order.item.name %>
+                <div><%= order.item.price %></div>
+                </div>
               <% end %>
             <% end %>
-          </ul>
         </div>
       </div>
     </div>
