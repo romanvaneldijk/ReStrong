@@ -21,17 +21,18 @@
           </div>
           <strong><%= item.price %>€</strong>
         </div>
-        <div class="button-bottom">
+        <div class="button-bottom" data-toggle="modal" data-target="#FINAL">
           <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary", remote: true do %>
-            <i class="fas fa-cart-plus"></i>
+            <i class="fas fa-cart-plus" ></i>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
   <% if @order.present? %>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center stick-bottom">
       <%= link_to "My Order", order_path(@order), class: "button" %>
     </div>
   <% end %>
 </div>
+<%= render partial: "modal" %>

@@ -88,3 +88,8 @@ height: 245px;
   display: flex;
   justify-content: flex-end;
 }
+
+.stick-bottom {
+  position: sticky;
+  bottom: 0;
+}
