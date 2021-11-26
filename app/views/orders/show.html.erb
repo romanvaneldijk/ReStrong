@@ -1,23 +1,26 @@
-<h1>Your Order</h1>
-
-<div class="card-product">
-  <% @order.items.tally.each do |key,value| %>
-  <% item = key.name %>
-  <% price = key.price %>
-  <% quantity = value %>
-    <%= item %>- <%= price * quantity %> € (x<%= quantity %>)
-        <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", data: { confirm: "Are you sure?" }, remote: true do %>
-          <i class="fas fa-minus-circle"></i></i>
-        <% end %>
-        <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>
-          <i class="fa fa-plus-circle"></i>
-        <% end %>
-  <% end %>
+<div class= "banner">
+  <h1 class= "order-title">Your Order</h1>
+  <div class= "emoji">🌶</div>
 </div>
 
-<div>
-  <%= link_to order_path(@order), method: :delete, class: "btn btn-danger" do %>
-          "Delete my order" <i class="fas fa-cart-plus"></i>
-        <% end %>
-  <%= link_to "Ready to pay", order_path(@order), method: :patch, class:"btn btn-primary" %>
+<% @order.items.tally.each do |key,value| %>
+  <div class="order-details">
+    <% item = key.name %>
+    <% quantity = value %>
+    <% price = key.price %>
+    <%= item %>: <%= price * quantity %>€
+    <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
+      <i class="fas fa-minus-circle"></i></i>
+    <% end %>
+    (<%= quantity %>)
+    <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>
+      <i class="fa fa-plus-circle"></i>
+    <% end %>
+  </div>
+<% end %>
+<div class="d-flex justify-content-between pr-2 pl-2">
+  <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
+  Delete my order <i class="fas fa-trash"></i>
+  <% end %>
+  <%= link_to "Ready to pay", order_path(@order), method: :patch, class:"pay_button" %>
 </div>

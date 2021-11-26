@@ -1,0 +1,26 @@
+.banner {
+  background-color: rgb(233, 196, 106);
+  height: 20vh;
+  padding-top: 20px;
+}
+.order-title {
+  font-family: "Inter" !important;
+  font-size: 30px;
+  text-align: center;
+}
+.emoji {
+  background-color: rgb(162, 103, 105);
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transform: translateY(11px);
+}
+.cards-container {
+  margin-top: 20px;
+}
