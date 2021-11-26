@@ -9,6 +9,9 @@ class OrderItemsController < ApplicationController
       @order = Order.create(user: @user)
     end
     OrderItem.create(order: @order, item: @item)
+
+    flash[:alert] = "added item to cart"
+
     unless @order.items.count > 1 && !request.referer.include?("orders")
       redirect_to request.referer
     end
