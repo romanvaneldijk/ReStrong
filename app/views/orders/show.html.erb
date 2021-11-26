@@ -1,23 +1,25 @@
-<h1>Your Order</h1>
 
-<div class="card-product">
+<div class= "banner">
+  <h1 class= "order-title">Your Order</h1>
+  <div class= "emoji">🌶</div>
+
+</div>
+<div class= "cards-container">
   <% @order.items.tally.each do |key,value| %>
-  <% item = key.name %>
-  <% price = key.price %>
-  <% quantity = value %>
-    <%= item %>- <%= price * quantity %> € (x<%= quantity %>)
-        <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", data: { confirm: "Are you sure?" }, remote: true do %>
-          <i class="fas fa-minus-circle"></i></i>
-        <% end %>
-        <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>
-          <i class="fa fa-plus-circle"></i>
-        <% end %>
+    <% item = key.name %>
+    <% price = key.price %>
+    <% quantity = value %>
+      <li><%= item %>- <%= price * quantity %> € (x<%= quantity %>)
+          <%= link_to order_item_path(item_id: key), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" }, remote: true do %>
+            "delete item" <i class="fas fa-cart-plus"></i>
+          <% end %>
+          <%= link_to order_items_path(item_id: key), method: :post, class: "btn btn-primary" do %>
+            "add to my order" <i class="fas fa-cart-plus"></i>
+          <% end %>
+      </li>
   <% end %>
 </div>
-
-<div>
-  <%= link_to order_path(@order), method: :delete, class: "btn btn-danger" do %>
-          "Delete my order" <i class="fas fa-cart-plus"></i>
-        <% end %>
-  <%= link_to "Ready to pay", order_path(@order), method: :patch, class:"btn btn-primary" %>
-</div>
+<%= link_to order_path(@order), method: :delete, class: "btn btn-danger" do %>
+        "delete my order" <i class="fas fa-cart-plus"></i>
+      <% end %>
+<%= link_to "confirm my order", order_path(@order), method: :patch, class:"btn btn-primary" %>
