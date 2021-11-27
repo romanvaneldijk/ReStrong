@@ -9,7 +9,7 @@
       <% quantity = value %>
       <% price = key.price %>
       <%= item %>: <%= price * quantity %>€
-      <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
+      <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %> <br>
         <i class="fas fa-minus-circle"></i></i>
       <% end %>
       (<%= quantity %>)
@@ -23,5 +23,5 @@
   <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
   Delete my order <i class="fas fa-trash"></i>
   <% end %>
-  <%= link_to "Ready to pay", order_path(@order), method: :patch, class:"pay_button" %>
+  <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>
 </div>
