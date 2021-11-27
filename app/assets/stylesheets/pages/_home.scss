@@ -47,6 +47,10 @@
   border-radius: 100px;
   color: white;
   margin-top: 40px;
+  &:hover {
+    text-decoration: none;
+    transition: 5ms;
+  }
 }
 
 .footer {
@@ -55,7 +59,11 @@
   text-align: right;
   // margin-top: 100%;
   // margin-left: 50%;
- p {
- margin-right: 20px;
+  p {
+  margin-right: 20px;
+  }
 }
-}
+
+// #separateDesicription {
+//   padding-top: 5px;
+// }
