@@ -8,7 +8,7 @@
       <% item = key.name %>
       <% quantity = value %>
       <% price = key.price %>
-      <%= item %>: <%= (price * quantity).round(2) %>€
+      <%= item %>: <%= (price * quantity).round(2) %> € <br>
       <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
         <i class="fas fa-minus-circle"></i>
       <% end %>
