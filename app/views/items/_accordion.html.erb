@@ -3,8 +3,8 @@
     <div id="accordion">
       <div class="card bg-transparent">
         <div class="card-product d-flex justify-content-between text-center collapse panel-collapse" id="headingOne<%= i.to_s %>">
-            <% if item.imageurl? %>
-              <img src=<%= item.imageurl %> class ="m-0 p-2"/>
+            <% if item.photo.attached? %>
+              <%= cl_image_tag item.photo.key, height: 150, width: 150, crop: :fill, class: "m-0 p-2" %>
             <% else %>
               <img class ="m-0 p-2" src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
             <% end %>

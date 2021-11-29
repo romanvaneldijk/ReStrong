@@ -3,7 +3,9 @@
     <strong><h1>Menu</h1></strong>
   </div>
 
+
   <%= render partial: "accordion" %>
+
   <% if @order.present? %>
     <div class="d-flex justify-content-center">
       <%= link_to "My Order", order_path(@order), class: "button" %>
