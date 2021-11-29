@@ -1,5 +1,5 @@
 <div class= "banner">
-  <h1 class= "order-title">Your Order</h1>
+  <h1 class= "order-title">YOUR ORDERS</h1>
   <div class= "emoji">🌶</div>
 </div>
 <div style="margin-top: 40px">
@@ -8,9 +8,9 @@
       <% item = key.name %>
       <% quantity = value %>
       <% price = key.price %>
-      <%= item %>: <%= price * quantity %>€
-      <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %> <br>
-        <i class="fas fa-minus-circle"></i></i>
+      <%= item %>: <%= (price * quantity).round(2) %>€
+      <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
+        <i class="fas fa-minus-circle"></i>
       <% end %>
       (<%= quantity %>)
       <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>
@@ -20,7 +20,7 @@
   <% end %>
 </div>
 <div class="d-flex justify-content-between pr-2 pl-2">
-  <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
+  <%= link_to order_path(@order), method: :delete, class: "delete_button", style: "position:sticky" do %>
   Delete my order <i class="fas fa-trash"></i>
   <% end %>
   <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>

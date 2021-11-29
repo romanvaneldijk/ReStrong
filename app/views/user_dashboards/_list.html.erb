@@ -1,0 +1,40 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-7 p-0 border-bottom border-dark">Item</div>
+    <div class="col-3 p-0 border-bottom border-dark">Pieces</div>
+    <div class="col-2 p-0 pl-0 border-bottom border-dark text-right">Price</div>
+  </div>
+    <% order_items_list = [] %>
+    <% @order2.each do |list| %>
+        <% order_items_list<< list.items %>
+    <% end %>
+    <% order_items = [] %>
+    <% summe = 0 %>
+     <% order_items_list.each do |items| %>
+      <% items.each do |item| %>
+        <% order_items << item %>
+        <% end %>
+    <% end %>
+    <% order_items.tally.each do |item, count| %>
+      <div class="row pt-1 pb-1">
+        <div class="col-7 pl-0 border-bottom border-white">
+          <%= item.name%>
+        </div>
+        <div class="col-3 text-center pl-0 border-bottom border-white">
+          <%= count %>
+        </div>
+        <div class="col-2 pl-0 border-bottom border-white text-right">
+          <%= "#{(item.price * count).round(2)}€" %>
+          <% summe += item.price * count%>
+        </div>
+      </div>
+    <% end %>
+  <div class="row border-top">
+    <div class="col-7 pl-0 border-top border-dark">Total:</div>
+    <div class="col-3 pl-0 border-top border-dark"></div>
+
+    <div class="col-2 pl-0 border-top border-dark text-right"><%= "#{summe.round(2)}€" %></div>
+  </div>
+
+
+</div>
