@@ -53,13 +53,17 @@
   // height: 150px;
   background: #D9DBF1;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  align-items: center;
+  align-items: top;
   margin-top: 10px;
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 20px 20px;
 
+}
+
+.order-info {
+  padding-left: 30px;
 }
 
 // .quantity {
