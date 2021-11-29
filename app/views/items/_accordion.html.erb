@@ -1,13 +1,39 @@
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Description⬇️
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+  <% i = 0 %>
+  <% @items.each do |item| %>
+    <div id="accordion">
+      <div class="card bg-transparent">
+        <div class="card-product d-flex justify-content-between text-center collapse panel-collapse" id="headingOne<%= i.to_s %>">
+            <% if item.imageurl? %>
+              <img src=<%= item.imageurl %> class ="m-0 p-2"/>
+            <% else %>
+              <img class ="m-0 p-2" src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
+            <% end %>
+            <div id="name_content" class="m-1">
+              <div>
+                <%= item.name %>
+              </div>
+              <div>
+                <button class="btn btn-link text-nowrap" data-toggle="collapse" data-target="#collapseOne<%= i.to_s %>" aria-expanded="true" aria-controls="collapseOne<%= i.to_s %>">
+                  Description
+                </button>
+              </div>
+            </div>
+            <div id="price_button" class="m-1">
+            <%= item.price %>€
+              <div class="button-bottom">
+              <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
+              <i class="fas fa-cart-plus"></i>
+            <% end %>
+            </div>
+          </div>
+        </div>
+        <div id="collapseOne<%= i.to_s %>" class="collapse hidden" aria-labelledby="headingOne<%= i.to_s %>" data-parent="#accordion">
+          <div class="card-body">
+            <h6>Description</h6>
+            <%= item.description %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <% i+=1 %>
+  <% end %>
