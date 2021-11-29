@@ -1,0 +1,16 @@
+<div class="container">
+  <% @tables.each do |table| %>
+    <div class="row border-bottom border-dark" style="margin-top: 20px;"><h4>Table <%= table.table_number %></h4></div>
+    <% table.users.each do |user| %>
+      <% user.orders.each do |order| %>
+        <div class="row" style="margin-top: 20px; margin-bottom: 5px;"> Order <%= order.id %></div>
+        <% order.items.tally.each do |item, count| %>
+          <div class="row">
+            <div class="col-10 pl-0 border-bottom border-white" style="margin-bottom: 10px;">-<%= item.name %></div>
+            <div class="col-2 pl-0 border-bottom border-white" style="margin-bottom: 10px;"><%= count %>x</div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
