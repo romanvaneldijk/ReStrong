@@ -8,7 +8,9 @@ class DinnersController < ApplicationController
     @dinner.save
     redirect_to root_path
   end
-   private
+
+  private
+
   def table_params
     params.require(:table).permit(:table_number)
   end
