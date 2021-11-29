@@ -1,5 +1,5 @@
 <div class= "banner">
-  <h1 class= "order-title">Your Order</h1>
+  <h1 class= "order-title">CHECKOUT</h1>
   <div class= "emoji">🌶</div>
 </div>
 <div style="margin-top: 150px;">
@@ -8,9 +8,9 @@
       <% item = key.name %>
       <% quantity = value %>
       <% price = key.price %>
-      <%= item %>: <%= price * quantity %>€
+      <%= item %>: <%= (price * quantity).round(2) %>€
       <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
-        <i class="fas fa-minus-circle"></i></i>
+        <i class="fas fa-minus-circle"></i>
       <% end %>
       (<%= quantity %>)
       <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>

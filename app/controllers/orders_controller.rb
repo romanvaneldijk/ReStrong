@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(status: "complete")
-    redirect_to user_dashboard_path, notice: "Your order has been completed"
+    redirect_to order_user_dashboard_path(@order), notice: "Your order has been completed"
   end
 
   def destroy
