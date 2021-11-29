@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :orders, only: %i[create show update destroy] do
       get "/user_dashboard", to: "user_dashboards#show", as: :user_dashboard
   end
-
   resources :order_items, only: %i[create destroy create_menu]
   # resources :items
   resources :tables, only: [ :new, :create, :show ]
