@@ -10,6 +10,7 @@
       <% item = key.name %>
       <% quantity = value %>
       <% price = key.price %>
+
       <% pic = key.imageurl %>
       <div class="card-product d-flex justify-content-between">
         <img src=<%= pic %> alt="item picture" class="m-1" ><%= item %>
@@ -26,6 +27,7 @@
           </div>
         </div>
       </div>
+
   <% end %>
 </div>
 <div class="d-flex justify-content-between m-3"><p>Total:</p><%= "#{(@order.items.sum(:price)).round(2)}€" %></div>
