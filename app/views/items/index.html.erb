@@ -6,9 +6,9 @@
   <% @items.each do |item| %>
       <div class="card-product d-flex justify-content-between">
          <% if item.imageurl? %>
-        <img src="<%= item.imageurl %>"/>
+        <img src="<%= item.imageurl %>" class="m-0 p-2"/>
       <% else %>
-        <img src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
+        <img src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs=" class="m-0 p-2"/>
       <% end %>
       <div class="text-center">
       <%= item.name%>
@@ -22,36 +22,6 @@
         </div>
         </div>
       </div>
-  <% end %>
-
-</div>
-#####
-  <% @items.each do |item| %>
-    <div class="card-product">
-      <% if item.imageurl? %>
-        <img src="<%= item.imageurl %>"/>
-      <% else %>
-        <img src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
-      <% end %>
-      <div class="card-stuff">
-        <div class="card-product-infos">
-          <div class="dish-info">
-            <div class="push-button-right">
-              <p>
-                <strong><%= item.name %></strong> <br>
-                <%= item.description %>
-              </p>
-            </div>
-          </div>
-          <strong><%= item.price %>€</strong>
-        </div>
-        <div class="button-bottom" data-toggle="modal" data-target="#FINAL">
-          <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary", remote: true do %>
-            <i class="fas fa-cart-plus" ></i>
-          <% end %>
-        </div>
-      </div>
-    </div>
   <% end %>
   <% if @order.present? %>
     <div class="d-flex justify-content-center stick-bottom">
