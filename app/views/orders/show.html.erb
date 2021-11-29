@@ -2,7 +2,7 @@
   <h1 class= "order-title">YOUR ORDERS</h1>
   <div class= "emoji">🌶</div>
 </div>
-<div style="margin-top: 150px;">
+<div style="margin-top: 40px">
   <% @order.items.tally.each do |key,value| %>
     <div class="order-details">
       <% item = key.name %>
@@ -23,5 +23,5 @@
   <%= link_to order_path(@order), method: :delete, class: "delete_button", style: "position:sticky" do %>
   Delete my order <i class="fas fa-trash"></i>
   <% end %>
-  <%= link_to "Ready to pay", order_path(@order), method: :patch, class:"pay_button", style: "position:sticky"%>
+  <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>
 </div>
