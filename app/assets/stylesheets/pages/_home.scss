@@ -38,15 +38,15 @@
 }
 .menu-button {
   // flex-direction: column;
-  padding: 16px 64px;
+  padding: 16px 115px;
   height: 51px;
-  // left: 15px;
-  // right: 17px;
-  // bottom: 22px;
-  background: #2A9D8F;
+  background-color: #2A9D8F;
   border-radius: 100px;
   color: white;
-  margin-top: 40px;
+  margin-top: 185px;
+  // margin-bottom: 100px;
+  position: fixed;
+
   &:hover {
     text-decoration: none;
     transition: 5ms;
@@ -61,6 +61,7 @@
   // margin-left: 50%;
   p {
   margin-right: 20px;
+  margin-top: 45px;
   }
 }
 
