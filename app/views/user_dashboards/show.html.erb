@@ -1,19 +1,20 @@
-<div class= "banner">
+<div class= "checkout-container" style= background-color: rgb(223, 219, 219) >
+  <div class= "banner">
 
-  <h1 class= "order-title">CHECKOUT</h1>
-  <div class= "emoji">🌶</div>
-</div>
-<div class="cards" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);; margin: 4em 1em 3em 1em; border-radius: 10px; box">
-  <div class="p-2">
-    <%= render partial: "list" %>
+    <h1 class= "checkout-title" style= "font-family: 'Holtwood One SC'; font-size: 30px; text-align: center;">Checkout</h1>
+    <div class= "checkout-emoji" style= "background-color: rgb(162, 103, 105); border-radius: 50%; padding: 20px; font-size: 60px; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; margin: auto; transform: translateY(11px);">🌶</div>
   </div>
-</div>
-  <div class="d-flex justify-content-center">
-      <%= link_to "NEW ORDER" , menu_path ,{:style=>'position:sticky; color:white; text-decoration:none; border-radius:30px;',:class=>'btn-primary vw-100 m-1 p-3
-       text-nowrap text-center'} %>
-       <button type="button" class="btn-primary vw-100 m-1 text-nowrap" style="box-shadow: 0 0 0px rgba(0,0,0,0); position:sticky; color:white; text-decoration:none; border-radius:30px;" data-toggle="modal" data-target="#exampleModalCenter">
-        PAY
-      </button>
+  <div class="cards" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);; margin: 4em 1em 3em 1em; border-radius: 10px; box">
+    <div class="p-2">
+      <%= render partial: "list" %>
+    </div>
   </div>
-
+    <div class="d-flex justify-content-center" style= "position: fixed; width: 100%; bottom: 40px;">
+        <%= link_to "NEW ORDER" , menu_path ,{:style=>'position:sticky; text-decoration:none; border-radius:30px; border: 1px solid;',:class=>'btn-empty vw-100 m-1 p-3
+        text-nowrap text-center'} %>
+        <button type="button" class="btn-primary vw-100 m-1 text-nowrap" style="box-shadow: 0 0 0px rgba(0,0,0,0); position:sticky; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#exampleModalCenter">
+          PAY
+        </button>
+    </div>
+</div>
 <%= render partial: "modal" %>

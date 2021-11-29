@@ -4,9 +4,9 @@
   </div>
   <% @items.each do |item| %>
     <div class="card-product">
-        <% if item.photo.attached? %>
-          <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
+          <% if item.photo.attached? %>
+            <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
       <div class="card-stuff">
         <div class="card-product-infos">
           <div class="dish-info">
