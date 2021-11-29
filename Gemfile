@@ -66,3 +66,6 @@ gem 'faker'
 
 # QR-CODE
 gem 'rqrcode'
+
+#CLOUDINARY
+gem 'dotenv-rails', groups: [:development, :test]
