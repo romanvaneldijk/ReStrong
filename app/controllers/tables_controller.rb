@@ -7,6 +7,7 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
     @table.qr_code = "https://restrong-734.herokuapp.com/tables/#{@table.table_number}/dinners/new"
     if @table.save
+      $table = @table
       redirect_to table_path(@table)
     else
       render :new

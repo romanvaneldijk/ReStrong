@@ -10,8 +10,7 @@
       </div>
       <div id="collapse<%= table.id %>" class="collapse open-card" aria-labelledby="heading<%= table.id %>" data-parent="#accordion">
         <div class="card-body">
-        <% table.users.each do |user| %>
-          <% user.orders.each do |order| %>
+          <% table.orders.each do |order| %>
             <div class="row" style="margin-top: 20px; margin-bottom: 5px;"> Order <%= order.id %></div>
             <% order.items.tally.each do |item, count| %>
               <div class="">
@@ -20,7 +19,6 @@
               </div>
             <% end %>
           <% end %>
-        <% end %>
         </div>
       </div>
     </div>

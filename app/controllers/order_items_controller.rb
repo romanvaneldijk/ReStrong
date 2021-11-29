@@ -3,9 +3,10 @@ class OrderItemsController < ApplicationController
     @user = current_user
     @item = Item.find(params[:item_id])
     if @user.orders.find_by(status: "processing").present?
+
       @order = @user.orders.find_by(status: "processing")
     else
-      @order = Order.create(user: @user)
+      @order = Order.create(user: @user, table: $table)
     end
     OrderItem.create(order: @order, item: @item)
 
