@@ -1,6 +1,7 @@
 .menu {
-background-color: #E9C46A;
-height: 245px;
+  background-color: #E9C46A;
+  height: 20vh;
+  padding-top: 20px;
 }
 
 .cards {
@@ -93,4 +94,25 @@ height: 245px;
 .stick-bottom {
   position: sticky;
   bottom: 0;
+}
+.menu-emoji {
+  background-color: rgb(162, 103, 105);
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transform: translateY(11px);
+}
+.menu-cards-container {
+  margin-top: 20px;
+}
+.menu-title {
+  font-family: "Holtwood One SC";
+  font-size: 30px;
+  text-align: center;
 }

@@ -43,9 +43,10 @@
   background-color: #2A9D8F;
   border-radius: 100px;
   color: white;
-  margin-top: 185px;
+  // margin-top: 185px;
   // margin-bottom: 100px;
   position: fixed;
+  bottom: 115px;
 
   &:hover {
     text-decoration: none;
@@ -60,8 +61,9 @@
   // margin-top: 100%;
   // margin-left: 50%;
   p {
-  margin-right: 20px;
-  margin-top: 45px;
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
   }
 }
 

@@ -1,6 +1,6 @@
 <div class= "banner">
-  <h1 class= "order-title">YOUR ORDERS</h1>
-  <div class= "emoji">🌶</div>
+  <h1 class= "order-title">Your Orders</h1>
+  <div class= "emoji">🥑</div>
 </div>
 <div style="margin-top: 40px">
   <% @order.items.tally.each do |key,value| %>
@@ -20,7 +20,7 @@
   <% end %>
 </div>
 <div class="d-flex justify-content-between pr-2 pl-2">
-  <%= link_to order_path(@order), method: :delete, class: "delete_button", style: "position:sticky" do %>
+  <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
   Delete my order <i class="fas fa-trash"></i>
   <% end %>
   <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>
