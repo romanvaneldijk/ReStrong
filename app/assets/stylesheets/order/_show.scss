@@ -3,6 +3,11 @@
   height: 20vh;
   padding-top: 20px;
 }
+.banner_owner {
+  background-color: rgb(162, 103, 105);
+  height: 20vh;
+  padding-top: 20px;
+}
 .order-title {
   font-family: "Holtwood One SC";
   font-size: 30px;
@@ -10,6 +15,19 @@
 }
 .emoji {
   background-color: rgb(162, 103, 105);
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transform: translateY(11px);
+}
+.emoji_owner {
+  background-color: rgb(233, 196, 106);
   border-radius: 50%;
   padding: 20px;
   font-size: 60px;

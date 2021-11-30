@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "/menu", to: "items#index"
-  resources :items, only: [ :new, :create ]
+
+  resources :items, only: [ :new, :create, :destroy ]
 
   # get "/order", to: "orders#show"
   get "/order/checkout", to: "checkout#show"
