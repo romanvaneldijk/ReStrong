@@ -5,8 +5,13 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    @order.update(status: "complete")
-    redirect_to order_user_dashboard_path(@order), notice: "Your order has been completed"
+    if request.referer.include?("owner")
+      @order.update(status: "ready to serve")
+      redirect_to owner_orders_path(table: @order.table.id, anchor: "heading#{@order.table.id}")
+    else
+      @order.update(status: "complete")
+      redirect_to order_user_dashboard_path(@order), notice: "Your order has been completed"
+    end
   end
 
   def destroy
