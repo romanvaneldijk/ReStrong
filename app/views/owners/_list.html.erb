@@ -14,7 +14,12 @@
             aria-expanded="false"
             aria-controls="collapse<%= table.id %>"
             >
-            Table <%= table.table_number %> -- Status: <%= table.orders.map(&:status).uniq.length == 1 && table.orders.map(&:status).uniq[0] == "ready to serve" %>
+            Table <%= table.table_number %> -- Status:
+            <% if table.orders.map(&:status).uniq.length == 1 && table.orders.map(&:status).uniq[0] == "ready to serve" %>
+              All orders delivered
+            <% else %>
+              Preparing <%= table.orders.where(status: "complete").count %> orders
+            <% end %>
           </button>
         </h5>
       </div>
@@ -32,7 +37,7 @@
             <% table.orders.each do |order| %>
               <%= simple_form_for(order) do |f| %>
                 <div class="row" style="margin-top: 20px; margin-bottom: 5px;">
-                  Order <%= order.id %>
+                  Order <%= order.id %>,  <em>  ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago </em>
                 </div>
                 <% order.items.tally.each do |item, count| %>
                   <div class="row">
@@ -41,10 +46,16 @@
                     <div class="col-2 pl-0 border-bottom border-white" style="margin-bottom: 10px;">€<%= item.price %>  </div>
                   </div>
                 <% end %>
-                <%= f.submit "Order Ready", class: "btn btn-primary", method: :patch, remote: true %>
+                <div
+                  class="row"
+                  data-controller="disable-button"
+                >
+                  <%= f.submit "Ready?", class: "button-submit-form", method: :patch, remote: true,
+                  data: { disable_button_target: 'button',
+                  action: 'click->disable-button#click'  } %>
+                </div>
               <% end %>
             <% end %>
-
           <div class="row border-bottom border-dark total-sum">
             <% prices = table.orders.map(&:items).flatten.map(&:price) %>
             Total: €<%= prices.sum %>
@@ -54,3 +65,9 @@
     </div>
   <% end %>
 </div>
+
+
+<%# make a if statement depending on the order, if status is ready to serve then show in italic the order and disable button
+else display the normal order with button %>
+
+<%# .where(status: "complete" || "ready to serve") line 37%>
