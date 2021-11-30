@@ -14,7 +14,7 @@
 
 .buttonx {
   // flex-direction: column;
-  padding: 16px 56px;
+  padding: 16px 70px;
   height: 51px;
   // left: 15px;
   // right: 17px;
@@ -37,5 +37,17 @@
 
 }
 
-li:last-child {border: 0px;}
 // ejofejio
+
+.button-submit {
+  padding: 16px 70px;
+  height: 51px;
+  background: #2A9D8F;
+  text-align: center;
+  border-radius: 100px;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: none;
+  justify-items: auto;
+}
