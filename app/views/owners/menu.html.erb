@@ -1,0 +1,32 @@
+<div class= "banner">
+  <h1 class= "order-title">Your Orders</h1>
+  <div class= "emoji">🥑</div>
+</div>
+
+<% @items.each do |item| %>
+    <div class="card-product">
+          <% if item.photo.attached? %>
+            <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+      <div class="card-stuff">
+        <div class="card-product-infos">
+          <div class="dish-info">
+            <div class="push-button-right">
+              <p>
+                <strong><%= item.name %></strong> <br>
+                <%= item.description %>
+              </p>
+            </div>
+          </div>
+          <strong><%= item.price %>€</strong>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<div class="d-flex justify-content-between pr-2 pl-2">
+  <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
+  Delete my order <i class="fas fa-trash"></i>
+  <% end %>
+  <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>
+</div>
+</div>

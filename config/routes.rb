@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/order/checkout", to: "checkout#show"
 
   get "owner", to: "owners#show"
+  get "owner/menu", to: "owners#menu"
 
   get "/tables/:table_id/dinners/new", to: "dinners#new", as: :new_dinner
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

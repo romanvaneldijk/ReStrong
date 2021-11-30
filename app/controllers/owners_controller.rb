@@ -3,4 +3,7 @@ class OwnersController < ApplicationController
     @orders = Order.all
     @dinners = Dinner.all
   end
+  def menu
+    @items = Item.all
+  end
 end
