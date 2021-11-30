@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "owner", to: "owners#show"
   get "owner/menu", to: "owners#menu"
+  get "owner/qr", to: "owners#qr"
 
   get "/tables/:table_id/dinners/new", to: "dinners#new", as: :new_dinner
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,21 @@
+<div style="background-color: #7194A9; height:1000px;">
+  <div class= "banner_owner">
+    <h1 class= "order-title">TABLE</h1>
+    <div class= "emoji_owner">🥑</div>
+  </div>
+  <div class="container">
+
+    <% @tables.each do |table| %>
+      <div class="card">
+        <%= table.table_number %>
+        <%= table.qr_code %>
+      </div>
+    <% end %>
+  </div>
+    <div class="d-flex justify-content-center" style="position:sticky; bottom: 10px;">
+    <button type="button" class="btn-success vw-100 m-3 text-nowrap" style=" height:51px; box-shadow: 0px; position:fixed; bottom: 40px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddTable">
+      NEW ITEM
+    </button>
+    </div>
+  <%= render partial: "modal_table" %>
+</div>
