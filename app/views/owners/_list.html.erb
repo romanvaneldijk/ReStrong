@@ -1,0 +1,26 @@
+<div id="accordion">
+  <% @tables.each do |table| %>
+    <div>
+      <div class="card-header" id="heading<%= table.id %>">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<%= table.id %>" aria-expanded="false" aria-controls="collapse<%= table.id %>">
+            Table <%= table.table_number %>
+          </button>
+        </h5>
+      </div>
+      <div id="collapse<%= table.id %>" class="collapse open-card" aria-labelledby="heading<%= table.id %>" data-parent="#accordion">
+        <div class="card-body">
+          <% table.orders.each do |order| %>
+            <div class="row" style="margin-top: 20px; margin-bottom: 5px;"> Order <%= order.id %>-- Status: <%= order.status %> </div>
+            <% order.items.tally.each do |item, count| %>
+              <div class="">
+                <div class="col-10 pl-0 border-bottom border-white" style="margin-bottom: 10px;">-<%= item.name %></div>
+                <div class="col-2 pl-0 border-bottom border-white" style="margin-bottom: 10px;"><%= count %>x</div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

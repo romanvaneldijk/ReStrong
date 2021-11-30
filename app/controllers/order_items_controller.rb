@@ -3,9 +3,10 @@ class OrderItemsController < ApplicationController
     @user = current_user
     @item = Item.find(params[:item_id])
     if @user.orders.find_by(status: "processing").present?
+
       @order = @user.orders.find_by(status: "processing")
     else
-      @order = Order.create(user: @user)
+      @order = Order.create(user: @user, table: $table)
     end
     OrderItem.create(order: @order, item: @item)
 
@@ -13,23 +14,6 @@ class OrderItemsController < ApplicationController
       redirect_to request.referer
     end
   end
-
-  # def create_men
-  #   @user = current_user
-  #   @item = Item.find(params[:item_id])
-  #   # @item = Item.find_by(status: "processing").present?
-  #   if @user.orders.find_by(status: "processing").present?
-  #     @order = @user.orders.find_by(status: "processing")
-  #   else
-  #     @order = Order.create(user: @user)
-  #   end
-  #   OrderItem.create(order: @order, item: @item)
-
-
-  #     redirect_to request.referer
-  #   end
-  # end
-
 
   def destroy
     @user = current_user
