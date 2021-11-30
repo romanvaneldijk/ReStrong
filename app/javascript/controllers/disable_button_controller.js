@@ -7,6 +7,6 @@ export default class extends Controller {
     // event.preventDefault();
     // console.log(this.element);
     // console.log("hello");
-    this.buttonTarget.classList.add("d-none");
+    // this.buttonTarget.classList.add("d-none");
   }
 }

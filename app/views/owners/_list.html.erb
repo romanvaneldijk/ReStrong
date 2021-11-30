@@ -34,11 +34,13 @@
         data-parent="#accordion"
       >
         <div class="card-body">
-            <% table.orders.each do |order| %>
-              <%= simple_form_for(order) do |f| %>
+
+            <% table.orders.where(status: "ready to serve").each do |order| %>
+              <s>
                 <div class="row" style="margin-top: 20px; margin-bottom: 5px;">
-                  Order <%= order.id %>,  <em>  ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago </em>
+                  Order <%= order.id %> is served!
                 </div>
+              </s>
                 <% order.items.tally.each do |item, count| %>
                   <div class="row">
                     <div class="col-8 pl-0 border-bottom border-white" style="margin-bottom: 10px;">-<%= item.name %></div>
@@ -50,12 +52,38 @@
                   class="row"
                   data-controller="disable-button"
                 >
-                  <%= f.submit "Ready?", class: "button-submit-form", method: :patch, remote: true,
-                  data: { disable_button_target: 'button',
-                  action: 'click->disable-button#click'  } %>
                 </div>
-              <% end %>
             <% end %>
+
+
+
+
+            <% table.orders.where(status: "complete").each do |order| %>
+              <b>
+                <%= simple_form_for(order) do |f| %>
+                  <div class="row" style="margin-top: 20px; margin-bottom: 5px;">
+                    <u>Order <%= order.id %>,  <em>  ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago </em></u>
+                  </div>
+                  <% order.items.tally.each do |item, count| %>
+                    <div class="row">
+                      <div class="col-8 pl-0 border-bottom border-white" style="margin-bottom: 10px;">-<%= item.name %></div>
+                      <div class="col-2 pl-0 border-bottom border-white" style="margin-bottom: 10px;"><%= count %>x</div>
+                      <div class="col-2 pl-0 border-bottom border-white" style="margin-bottom: 10px;">€<%= item.price %>  </div>
+                    </div>
+                  <% end %>
+                  <div
+                    class="row"
+                    data-controller="disable-button"
+                  >
+                    <%= f.submit "Ready?", class: "button-submit-form", method: :patch, remote: true,
+                    data: { disable_button_target: 'button',
+                    action: 'click->disable-button#click'  } %>
+                  </div>
+                <% end %>
+              </b>
+            <% end %>
+
+
           <div class="row border-bottom border-dark total-sum">
             <% prices = table.orders.map(&:items).flatten.map(&:price) %>
             Total: €<%= prices.sum %>
@@ -71,3 +99,7 @@
 else display the normal order with button %>
 
 <%# .where(status: "complete" || "ready to serve") line 37%>
+
+<%# if table.orders.status == "ready to serve"%>
+<%# <% elsif table.orders.status == "complete"  %>
+<%# end  %>
