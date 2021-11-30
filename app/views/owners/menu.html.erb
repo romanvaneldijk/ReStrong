@@ -3,7 +3,7 @@
     <h1 class= "order-title">MY MENU</h1>
     <div class= "emoji_owner">🥑</div>
   </div>
-  <div class="mt-5 scroll" style="height:600px">
+  <div class="mt-5 vh-20 scroll">
   <% i = 0 %>
     <% @items.each do |item| %>
       <div id="accordion">
@@ -43,8 +43,8 @@
       </div>
       <% i+=1 %>
     <% end %>
-    <div class="d-flex justify-content-center" style="position:fixed; bottom: 10px; background-color: #7194A9;">
-    <button type="button" class="btn-success vw-100 m-2 text-nowrap" style=" height:51px; box-shadow: 0px; position:sticky; bottom: 10px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddItem">
+    <div class="d-flex justify-content-center" style="position:sticky; bottom: 10px;">
+    <button type="button" class="btn-success vw-100 m-1 text-nowrap" style=" height:51px; box-shadow: 0px; position:sticky; bottom: 10px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddItem">
       NEW ITEM
     </button>
     </div>
