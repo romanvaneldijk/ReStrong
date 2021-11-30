@@ -11,6 +11,9 @@
   margin-top: 15px;
   margin-bottom: 15px;
   display: inline-block;
+  bottom: 0px;
+  position: fixed;
+  left: 220px;
 }
 
 .pay_button:hover {
@@ -31,18 +34,18 @@
   // left: 15px;
   // right: 17px;
   // bottom: 22px;
-  background: #e60808;
+  background: #bb3131;
   border-radius: 100px;
   color: white;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  display: inline-block;
+  position: fixed;
+  bottom: 16px;
+  left: 20px;
 }
 
 .delete_button:hover {
   text-decoration: none;
   color: white;
-  background: #550505;
+  background: #fa0000;
   transition: 5ms;
 }
 
@@ -53,13 +56,17 @@
   // height: 150px;
   background: #D9DBF1;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  align-items: center;
+  align-items: top;
   margin-top: 10px;
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 20px 20px;
 
+}
+
+.order-info {
+  padding-left: 30px;
 }
 
 // .quantity {

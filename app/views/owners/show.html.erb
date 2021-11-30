@@ -3,27 +3,12 @@
     <h1 style="margin-top: 30px;">Current Orders</h1>
   </div>
 
-  <%# <div class="cards" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);; margin: 4em 1em 3em 1em; border-radius: 10px; box"> %>
-    <div class="p-2">
-      <%= render partial: "list" %>
-    </div>
-  <%# </div> %>
+  <div class="p-2">
+    <%= render partial: "list" %>
+  </div>
 
   <div class="d-flex justify-content-between pr-2 pl-2">
-    <%= link_to "Create Item", new_item_path, class: "pay_button" %>
+    <%= link_to "Create Item", new_item_path, class: "btn btn-primary" %>
     <%= link_to "Create Table", new_table_path, class: "pay_button" %>
-  </div>
-
-  <div class="container">
-  <div id="orders">
-  <% @orders.each do |order|%>
-    <% users_id = order.user.id%>
-    <% @dinners.each do |dinner|%>
-      <% dinner.table.table_number%>
-    <% end %>
-      <% break %>
-  <% end %>
-
-  </div>
   </div>
 </div>

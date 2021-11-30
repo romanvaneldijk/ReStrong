@@ -18,13 +18,4 @@ class OrdersController < ApplicationController
     end
   end
 
-  def destroy_all
-    # @order = Order.find(params[:id])
-    @user = current_user
-    if @user.orders.find_by(status: "processing").present?
-      @user.orders.find_by(status: "processing").destroy_all
-      redirect_to root_path
-    end
-  end
-
 end
