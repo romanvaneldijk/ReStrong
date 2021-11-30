@@ -6,8 +6,9 @@
   <%= render partial: "accordion" %>
 
   <% if @order.present? %>
-    <div class="d-flex justify-content-center">
+     <div class="d-flex justify-content-center stick-bottom">
       <%= link_to "My Order", order_path(@order), class: "button" %>
     </div>
   <% end %>
 </div>
+<%= render partial: "modal" %>

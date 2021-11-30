@@ -2,7 +2,7 @@
   <% @items.each do |item| %>
     <div id="accordion">
       <div class="card bg-transparent">
-        <div class="card-product d-flex justify-content-between text-center collapse panel-collapse p-2" id="headingOne<%= i.to_s %>">
+        <div class="card-product d-flex justify-content-between text-center collapse panel-collapse" id="headingOne<%= i.to_s %>">
             <% if item.photo.attached? %>
               <%= cl_image_tag item.photo.key, height: 150, width: 150, crop: :fill, class: "m-0 p-2" %>
             <% else %>
@@ -20,11 +20,11 @@
             </div>
             <div id="price_button" class="m-1">
             <%= item.price %>€
-              <div class="button-bottom pt-2">
-              <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary" do %>
-              <i class="fas fa-cart-plus"></i>
-            <% end %>
-            </div>
+              <div class="button-bottom" data-toggle="modal" data-target="#FINAL">
+                <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary", remote: true do %>
+                <i class="fas fa-cart-plus" ></i>
+                <% end %>
+              </div>
           </div>
         </div>
         <div id="collapseOne<%= i.to_s %>" class="collapse hidden" aria-labelledby="headingOne<%= i.to_s %>" data-parent="#accordion">
