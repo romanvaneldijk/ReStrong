@@ -1,4 +1,6 @@
-<%= simple_form_for @table do |f| %>
-  <%= f.input :table_number %>
-  <%= f.submit %>
-<% end %>
+ <div class = "forms">
+  <%= simple_form_for @table do |f| %>
+    <%= f.input :table_number %>
+      <%= f.submit "Submit", class:"button-submit" %>
+  <% end %>
+ </div>

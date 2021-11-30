@@ -1,14 +1,19 @@
-<div class="container justify-content-center background">
-  <div class="d-flex justify-content-center" >
-    <h1 style="margin-top: 30px;">Current Orders</h1>
+<div class= "body" >
+    <div class= "main-container">
+    <div class="homepage-container">
+      <h1 class= "restaurant-name">"Tico-Taco"</h1>
+      <h3 class = "restaurant-subtitle">🌮 Taquería 🌮</h3>
+        <div class="d-flex flex-column">
+          <div class= "owner-home-page-buttons">
+            <%= link_to "MY MENU", owner_menu_path %>
+          </div>
+          <div class= "owner-home-page-buttons-second" >
+            <%= link_to "Add a Table", new_table_path %>
+          </div>
+        </div>
+    </div>
   </div>
-
-  <div class="p-2">
-    <%= render partial: "list" %>
-  </div>
-
-  <div class="d-flex justify-content-between pr-2 pl-2">
-    <%= link_to "Create Item", new_item_path, class: "btn btn-primary" %>
-    <%= link_to "Create Table", new_table_path, class: "pay_button" %>
+  <div class= "footer">
+    <p>Powered by ReStrong</p>
   </div>
 </div>
