@@ -9,5 +9,4 @@ class OwnersController < ApplicationController
     @items = Item.all
     @item = Item.new
   end
-
 end
