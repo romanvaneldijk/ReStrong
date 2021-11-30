@@ -3,46 +3,35 @@
   <div class= "emoji">🥑</div>
 </div>
 
-<div class="cards p-4">
+<div class="cards">
+<div style="margin-top: 40px">
   <% @order.items.tally.each do |key,value| %>
-  <div>
-        <% item_name = key.name %>
+    <div class="d-flex order-details">
+      <% if key.photo.attached? %>
+        <%= cl_image_tag key.photo.key, height: 150, width: 150, crop: :fill %> <br>
+      <% end %>
+      <div class="order-info">
+        <% item = key.name %>
         <% quantity = value %>
         <% price = key.price %>
-        <div class="card-product d-flex justify-content-between">
-          <% if key.photo.attached? %>
-            <%= cl_image_tag key.photo.key, class: "m-0 p-2"%>
-          <% else %>
-            <img class ="m-0 p-2" src="https://media.istockphoto.com/photos/shakh-plov-picture-id1214641059?b=1&k=20&m=1214641059&s=170667a&w=0&h=O5nQMbhqaDaQFbM49RJpbTagWZMhaxo6C27-mgeRdbs="/>
-          <% end %>
-          <div>
-            <%= item_name %>
-          </div>
-          <div class="m-1 text-center">
-            <strong class="text-left"><%= (price * quantity).round(2) %>€</strong>
-            <div id="plus_minus" class="d-flex flex-nowrap">
-              <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
-                <i class="fas fa-minus-circle"></i>
-              <% end %>
-              (<%= quantity %>)
-              <%= link_to order_items_path(item_id: key), class: "plus_button", method: :post do %>
-                <i class="fa fa-plus-circle"></i>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <%= item %>: <%= (price * quantity).round(2) %> € <br>
+        <%= link_to order_item_path(item_id: key), method: :delete, class: "minus_button", remote: true do %>
+          <i class="fas fa-minus-circle"></i>
+        <% end %>
+        (<%= quantity %>)
+        <%= link_to order_items_path(item_id: key), class: "plus_button", remote: true, method: :post do %>
+          <i class="fa fa-plus-circle"></i>
+        <% end %>
       </div>
-    <% end %>
-    <div class="d-flex justify-content-between m-3">
-      <p>Total:</p><%= "#{(@order.items.sum(:price)).round(2)}€" %>
     </div>
-  </div>
-
-
+  <% end %>
 </div>
-  <div class="d-flex justify-content-between text-nowrap text-center" style="position: fixed; bottom:40px; right:13.6px; left:13.6px;">
-    <%= link_to order_path(@order), method: :delete, class: "delete_button vw-50 text-center p-3 m-2" do %>
-    Delete my order <i class="fas fa-trash"></i>
-    <% end %>
-    <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button vw-50 text-center m-2" %>
-  </div>
+<div class="d-flex justify-content-between m-3"><p>Total:</p><%= "#{(@order.items.sum(:price)).round(2)}€" %></div>
+</div>
+
+<div class="d-flex justify-content-between pr-2 pl-2">
+  <%= link_to order_path(@order), method: :delete, class: "delete_button" do %>
+  Delete my order <i class="fas fa-trash"></i>
+  <% end %>
+  <%= link_to "Send the order", order_path(@order), method: :patch, class:"pay_button" %>
+</div>
