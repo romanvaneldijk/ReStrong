@@ -1,34 +1,12 @@
-<div class="cards">
+  <div class="cards">
   <div class="menu">
     <strong><h1>Menu</h1></strong>
   </div>
-  <% @items.each do |item| %>
-    <div class="card-product">
-          <% if item.photo.attached? %>
-            <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-      <div class="card-stuff">
-        <div class="card-product-infos">
-          <div class="dish-info">
-            <div class="push-button-right">
-              <p>
-                <strong><%= item.name %></strong> <br>
-                <%= item.description %>
-              </p>
-            </div>
-          </div>
-          <strong><%= item.price %>€</strong>
-        </div>
-        <div class="button-bottom" data-toggle="modal" data-target="#FINAL">
-          <%= link_to order_items_path(item_id: item), method: :post, id: "addTocart", class: "btn btn-primary", remote: true do %>
-            <i class="fas fa-cart-plus" ></i>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+
+  <%= render partial: "accordion" %>
+
   <% if @order.present? %>
-    <div class="d-flex justify-content-center stick-bottom">
+     <div class="d-flex justify-content-center stick-bottom">
       <%= link_to "My Order", order_path(@order), class: "button" %>
     </div>
   <% end %>
