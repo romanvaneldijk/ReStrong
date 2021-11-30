@@ -13,10 +13,17 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to owner_path
+      redirect_to owner_menu_path
     else
       render :new
     end
+
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to request.referer
   end
 
   private

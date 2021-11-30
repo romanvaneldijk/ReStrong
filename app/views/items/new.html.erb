@@ -1,8 +1,10 @@
-<h1>create a new menu item</h1>
-<%= simple_form_for @item do |f| %>
-  <%= f.input :name,required: true %>
-  <%= f.input :description,required: true %>
-  <%= f.input :price,required: true %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="forms">
+  <h1>Create a new menu item</h1>
+  <%= simple_form_for @item do |f| %>
+    <%= f.input :name,required: true %>
+    <%= f.input :description,required: true %>
+    <%= f.input :price,required: true %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

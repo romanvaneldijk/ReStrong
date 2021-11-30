@@ -8,12 +8,7 @@
   background: #2A9D8F;
   border-radius: 100px;
   color: white;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  display: inline-block;
-  bottom: 0px;
-  position: fixed;
-  left: 220px;
+
 }
 
 .pay_button:hover {
@@ -29,7 +24,7 @@
 
 .delete_button {
   // flex-direction: column;
-  padding: 14px 14px;
+
   height: 51px;
   // left: 15px;
   // right: 17px;
@@ -37,9 +32,6 @@
   background: #bb3131;
   border-radius: 100px;
   color: white;
-  position: fixed;
-  bottom: 16px;
-  left: 20px;
 }
 
 .delete_button:hover {
@@ -72,3 +64,7 @@
 // .quantity {
 //   padding-left: 10px;
 // }
+
+.fa-trash:hover {
+  color: red;
+}
