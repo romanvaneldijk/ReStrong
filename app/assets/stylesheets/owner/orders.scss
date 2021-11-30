@@ -1,0 +1,22 @@
+.total-sum {
+  justify-content: end;
+  margin-right: auto;
+}
+
+.background {
+  background-color: #084c61;
+  height: 1000px;
+}
+
+.card-header {
+  background-color: $grayx;
+  border-top-left-radius: 9px !important;
+  border-top-right-radius: 9px !important;
+  margin-top: 8px;
+}
+
+.open-card {
+  background-color: $light-grayx;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}

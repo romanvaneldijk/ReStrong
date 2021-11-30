@@ -10,8 +10,14 @@ Item.destroy_all
 puts 'items deleted'
 require "open-uri"
 
+puts "destroying tables"
+Dinner.destroy_all
+
 puts 'destrouying orders'
 Order.destroy_all
+
+puts "destroying tables"
+Table.destroy_all
 
 #User.create!(email: "test@test.com", password:"123456")
 puts "created user"
