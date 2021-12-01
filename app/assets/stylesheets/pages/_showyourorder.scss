@@ -16,6 +16,7 @@
   color: white;
   background: #17524b;
   margin-top: 40px;
+  padding: 14px 14px;
 }
 
 .center-button {
@@ -24,15 +25,13 @@
 }
 
 .delete_button {
-  // flex-direction: column;
-
   height: 51px;
-  // left: 15px;
-  // right: 17px;
-  // bottom: 22px;
   background: #bb3131;
   border-radius: 100px;
   color: white;
+  align-content: center;
+  padding: 9px 14px 14px 14px;
+  // padding-top: -5px;
 }
 
 .delete_button:hover {
