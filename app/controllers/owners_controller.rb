@@ -8,6 +8,14 @@ class OwnersController < ApplicationController
     @items = Item.all
     @item = Item.new
   end
+
+  def orders
+    @orders = Order.all
+    @dinners = Dinner.all
+    @tables = Table.all
+  end
+
+
   def qr
     @tables = Table.all
     @new_table = Table.new
