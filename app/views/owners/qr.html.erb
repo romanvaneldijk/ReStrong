@@ -20,7 +20,7 @@
           <div id="collapseOne<%= i.to_s %>" class="collapse hidden card-product flex-wrap justify-content-center pb-2"  aria-labelledby="headingOne<%= i.to_s %>" data-parent="#accordion">
             <div class="d-flex card-body justify-content-center" id="owner-menu-text-color">
               <% table_id = table.id%>
-              <% table.qr_code = "https://restrong-734.herokuapp.com/tables/#{table_id}/dinners/new" %>
+              <% table.qr_code = "http://restrong.org/tables/#{table_id}/dinners/new" %>
               <% qr_code = RQRCode::QRCode.new(table.qr_code)%>
               <% svg = qr_code.as_svg( offset: 0, color: '000',module_size: 4, shape_rendering: 'crispEdges', standalone: true)%>
               <div>
@@ -28,7 +28,7 @@
               </div>
             </div>
               <div class="text-center justify-content-between">
-              <%= link_to "#Heroku# ", "https://restrong.org/tables/#{table_id}/dinners/new" %>
+              <%= link_to "#restrong.org# ", "http://restrong.org/tables/#{table_id}/dinners/new" %>
               <%= link_to "#Local Host#", new_dinner_path(table) %>
               </div>
           </div>
