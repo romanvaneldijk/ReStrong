@@ -1,8 +1,10 @@
- <div class = "forms">
-  <%= simple_form_for @table do |f| %>
-    <%= f.input :table_number %>
-      <%= f.submit "Submit", class:"button-submit" %>
-  <% end %>
- </div>
+<body style="background-color:#084c61">
+  <div class = "forms">
+    <%= simple_form_for @table do |f| %>
+      <%= f.input :table_number, label_html: { class: "table-number-color" } %>
+        <%= f.submit "Submit", class:"button-submit" %>
+    <% end %>
+  </div>
+</body>
 
-<%# $yellow %>
+<%# ="background-color: #084c61 %>
