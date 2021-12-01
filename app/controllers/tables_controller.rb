@@ -5,7 +5,7 @@ class TablesController < ApplicationController
 
   def create
     @table = Table.new(table_params)
-    @table.qr_code = "https://restrong-734.herokuapp.com/tables/#{@table.table_number}/dinners/new"
+    @table.qr_code = "https://restrong-734.herokuapp.com/tables/#{@table.id}/dinners/new"
     if @table.save
       $table = @table
       redirect_to table_path(@table)
