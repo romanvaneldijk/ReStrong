@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "owner", to: "owners#show"
   get "/owner/orders", to: "owners#orders"
   get "owner/menu", to: "owners#menu"
+  get "owner/qr", to: "owners#qr"
 
   get "/tables/:table_id/dinners/new", to: "dinners#new", as: :new_dinner
 
