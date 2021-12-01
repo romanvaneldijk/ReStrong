@@ -75,3 +75,24 @@
   background-color: #cccccc;
   color: #666666;
 }
+
+.back-button {
+  padding: 6px 10px;
+    background: #084c61;
+    border-radius: 7px;
+    color: white;
+    margin-top: 15px;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.button-to-owner {
+  // flex-direction: column;
+  padding: 16px 140px;
+  height: 51px;
+  background: #a26769;
+  border-radius: 100px;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
