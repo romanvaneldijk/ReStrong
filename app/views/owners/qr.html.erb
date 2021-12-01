@@ -1,0 +1,38 @@
+<body style="background-color: #084C61">
+
+<div class="mb-4" style="background-color: #084C61; height:100%; margin: 0px auto;">
+  <div class= "banner_owner">
+    <h1 class= "order-title">TABLE</h1>
+    <div class= "emoji_owner">🥑</div>
+  </div>
+  <div class="container d-flex justify-content-between flex-wrap" style="margin-top: 5rem">
+    <% @tables.each do |table| %>
+
+    <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#QrBig">
+      <div class="text-center m-2 p-2" style="border-radius:20px; background-color:#d8daf0;">
+        <h4>TABLE: <%= table.id %></h4>
+        <% qr = RQRCode::QRCode.new(table.qr_code) %>
+        <% svg = qr.as_svg( offset: 0, color: '000',module_size: 2, shape_rendering: 'crispEdges', standalone: true) %>
+        <% svg_2 = qr.as_svg( offset: 0, color: '000',module_size: 4, shape_rendering: 'crispEdges', standalone: true) %>
+        <div>
+        <%= svg.html_safe %>
+
+        </div>
+      </div>
+    </button>
+    <% end %>
+  </div>
+</div>
+    <div class="d-flex justify-content-center" style="position:relative;">
+    <div>
+    <button type="button" class="button vw-100 m-3 text-nowrap" style=" height:51px; box-shadow: 0px; position:fixed; bottom: 20px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddTable">
+      ADD TABLE
+    </button>
+    </div>
+    <div class="d-flex justify-content-center stick-bottom text-center">
+      <%= link_to "BACK", owner_path, class: "button vw-100 m-3 text-nowrap" %>
+    </div>
+    </div>
+  <%= render partial: "modal_table" %>
+  <%= render partial: "modal_qr" %>
+</body>
