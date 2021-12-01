@@ -5,14 +5,14 @@
 .owner-home-page-buttons {
   // flex-direction: column;
   align-items: center;
-  padding: 16px 15px;
+  padding: 15px 15px;
   height: 51px;
   background-color: #2A9D8F;
   border-radius: 100px;
   color: white;
-  margin: 1em;
+  margin: 1.5em;
   width: 80%;
-  margin-bottom: 30px;
+  margin-bottom: 74px;
   position: fixed;
   bottom: 115px;
   text-align: center;
@@ -27,17 +27,43 @@
 
 .owner-home-page-buttons-second {
   // flex-direction: column;
-  padding: 16px 15px;
+  padding: 15px 15px;
   width: 80%;
   height: 51px;
   background-color: #2A9D8F;
   border-radius: 100px;
   color: white;
-  margin: 1em;
+  margin: 1.5em;
+  text-align: center;
   // margin-top: 185px;
   // margin-bottom: 100px;
   position: fixed;
-  bottom: 65px;
+  bottom: 40px;
+  text-align: center;
+
+    a {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.owner-home-page-buttons-third {
+  // flex-direction: column;
+  padding: 15px 15px;
+  width: 80%;
+  height: 51px;
+  background-color: #2A9D8F;
+  border-radius: 100px;
+  color: white;
+  margin: 1.5em;
+  // margin-top: 185px;
+  // margin-bottom: 100px;
+  position: fixed;
+  bottom: 103px;
   text-align: center;
 
     a {
