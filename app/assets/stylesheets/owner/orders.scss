@@ -4,15 +4,16 @@
 }
 
 .background {
-  background-color: #084c61;
-  height: 1000px;
+  background-color: #7194A9;
+  height: 100%;
+  // padding-bottom: 30%;
 }
 
 .card-header {
   background-color: $grayx;
   border-top-left-radius: 9px !important;
   border-top-right-radius: 9px !important;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .open-card {
