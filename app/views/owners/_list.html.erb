@@ -67,8 +67,8 @@
               <b>
                 <%= simple_form_for(order) do |f| %>
                   <div class="row" style="margin-top: 20px; margin-bottom: 5px;">
-                    <u>Order <%= order.id %></u> <br>
-                    <em>  ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago </em>
+                    <u>Order <%= order.id %><br>
+                    <em>ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago</em></u>
                   </div>
                   <% order.items.tally.each do |item, count| %>
                     <div class="row">
