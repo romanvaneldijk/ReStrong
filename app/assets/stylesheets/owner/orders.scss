@@ -4,9 +4,10 @@
 }
 
 .background {
-  background-color: #7194A9;
+  background-color: #084c61;
   height: 100%;
   // padding-bottom: 30%;
+  min-height: 100vh;
 }
 
 .card-header {
@@ -20,4 +21,8 @@
   background-color: $light-grayx;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
+}
+
+.d-content {
+  display: contents;
 }

@@ -5,20 +5,25 @@
         <h5 class="mb-0">
           <button
             <% if table.id.to_s == params[:table] %>
-              class="btn btn-link"
+              class="btn btn-link d-content"
             <% else %>
-              class="btn btn-link collapsed"
+              class="btn btn-link collapsed d-content"
             <% end %>
             data-toggle="collapse"
             data-target="#collapse<%= table.id %>"
             aria-expanded="false"
             aria-controls="collapse<%= table.id %>"
             >
-            Table <%= table.table_number %> -- Status:
+            Table <%= table.table_number %> -- Status: <br>
             <% if table.orders.map(&:status).uniq.length == 1 && table.orders.map(&:status).uniq[0] == "ready to serve" %>
               All orders delivered
             <% else %>
-              Preparing <%= table.orders.where(status: "complete").count %> orders
+              Preparing
+              <% if table.orders.where(status: "complete").one? %>
+                <%= table.orders.where(status: "complete").count %> order
+              <% else %>
+              <%= table.orders.where(status: "complete").count %> orders
+              <% end %>
             <% end %>
           </button>
         </h5>
@@ -62,7 +67,8 @@
               <b>
                 <%= simple_form_for(order) do |f| %>
                   <div class="row" style="margin-top: 20px; margin-bottom: 5px;">
-                    <u>Order <%= order.id %>,  <em>  ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago </em></u>
+                    <u>Order <%= order.id %><br>
+                    <em>ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago</em></u>
                   </div>
                   <% order.items.tally.each do |item, count| %>
                     <div class="row">
