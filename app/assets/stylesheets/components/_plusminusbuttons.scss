@@ -1,4 +1,5 @@
 .minus_button {
+
   color: black;
   & :hover {
     color: red;
@@ -9,4 +10,22 @@
     & :hover {
       color: $green
   }
+}
+
+
+#plus_minus {
+align-items: bottom;
+
+}
+
+#minus-circle {
+  margin-top: 40px;
+  margin-right: 4px;
+  font-size: 1.3em;
+}
+
+#plus-circle {
+  margin-top: 40px;
+  margin-left: 4px;
+  font-size: 1.3em;
 }
