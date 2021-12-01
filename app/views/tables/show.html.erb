@@ -1,7 +1,7 @@
-<h1>Here is your QR-Code for table#<%= @table.id  %></h1>
+<h1>Here is your QR-Code for table#<%= @table.table_number  %></h1>
 <%= @svg.html_safe %>
 <div>
-<%= link_to "click", "https://restrong-734.herokuapp.com/tables/#{@table.id}/dinners/new" %>
+<%= link_to "click", "https://restrong-734.herokuapp.com/tables/#{@table.table_number}/dinners/new" %>
 <%= link_to "click", new_dinner_path(@table) %>
 <%= link_to "Homepage", owner_path%>
 
