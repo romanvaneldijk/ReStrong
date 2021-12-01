@@ -8,7 +8,7 @@ class TablesController < ApplicationController
     @table.qr_code = "https://restrong-734.herokuapp.com/tables/#{@table.id}/dinners/new"
     if @table.save
       $table = @table
-      redirect_to owner_qr_path
+      redirect_to owner_qr_path(@table)
     else
       render :new
     end
