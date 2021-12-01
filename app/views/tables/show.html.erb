@@ -1,6 +1,5 @@
 <h1>Here is your QR-Code for table#<%= @table.id  %></h1>
-<% svg = qr.as_svg( offset: 0, color: '000',module_size: 5, shape_rendering: 'crispEdges', standalone: true) %>
-<%=svg.html_safe %>
+<%= @svg.html_safe %>
 <div>
 <%= link_to "click", "https://restrong-734.herokuapp.com/tables/#{@table.id}/dinners/new" %>
 <%= link_to "click", new_dinner_path(@table) %>
