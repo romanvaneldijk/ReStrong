@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-7 p-0 border-bottom border-dark">Item</div>
     <div class="col-3 p-0 border-bottom border-dark">Amount</div>
-    <div class="col-2 p-0 pl-0 border-bottom border-dark text-right">Price</div>
+    <div class="col-2 p-0 pl-0 border-bottom border-dark text-center">Price</div>
   </div>
     <% order_items_list = [] %>
     <% @order2.each do |list| %>
@@ -20,11 +20,11 @@
         <div class="col-7 pl-0 border-bottom border-white">
           <%= item.name%>
         </div>
-        <div class=" col-3 text-center pl-0 border-bottom border-white">
+        <div class=" col-2 text-center pl-0 border-bottom border-white">
           <%= count %>
         </div>
-        <div class="col-2 pl-0 border-bottom border-white text-right">
-          <%= "#{(item.price * count).round(2)}€" %>
+        <div class="col-3 pl-0 border-bottom border-white text-right justify-item-right">
+          <%= "€ #{(item.price * count).round(2)}"%>
           <% summe += item.price * count%>
         </div>
       </div>
@@ -33,7 +33,7 @@
     <div class="col-7 pl-0 border-top border-dark">Total:</div>
     <div class="col-3 pl-0 border-top border-dark"></div>
 
-    <div class="col-2 pl-0 border-top border-dark text-right"><%= "#{summe.round(2)}€" %></div>
+    <div class="col-2 pl-0 border-top border-dark text-right"><%= "€ #{summe.round(2)}" %></div>
   </div>
 
 
