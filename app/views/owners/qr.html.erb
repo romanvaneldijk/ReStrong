@@ -5,20 +5,18 @@
     <h1 class= "order-title">TABLE</h1>
     <div class= "emoji_owner">🥑</div>
   </div>
-  <div class="mt-3 overflow-auto">
+  <div class="overflow-auto" style="margin-top: 50px;" >
   <% i = 0 %>
     <% @tables.each do |table| %>
       <div id="accordion">
-        <div class="card bg-transparent">
-          <div class="card-product d-flex justify-content-center text-center collapse panel-collapse" id="headingOne<%= i.to_s %>">
+        <div class="card bg-transparent border-0">
+          <div class="card-product d-flex justify-content-center collapse panel-collapse" id="headingOne<%= i.to_s %>">
                 <button class="btn btn-link text-nowrap text-decoration-none" data-toggle="collapse" data-target="#collapseOne<%= i.to_s %>" aria-expanded="true" aria-controls="collapseOne<%= i.to_s %>">
                   <h6>Table: <%= table.table_number %></h6>
                 </button>
-              <div id="price_button" class="p-3">
-            </div>
           </div>
           <div id="collapseOne<%= i.to_s %>" class="collapse hidden card-product flex-wrap justify-content-center pb-2"  aria-labelledby="headingOne<%= i.to_s %>" data-parent="#accordion">
-            <div class="d-flex card-body justify-content-center" id="owner-menu-text-color">
+            <div class="d-flex card-body justify-content-center overflow-auto" id="owner-menu-text-color">
               <% table_id = table.id%>
               <% table.qr_code = "www.restrong.org/tables/#{table_id}/dinners/new" %>
               <% qr_code = RQRCode::QRCode.new(table.qr_code)%>
@@ -38,13 +36,13 @@
     <% end %>
   </div>
 
-    <div class="d-flex justify-content-between flex-wrap" style="position:sticky; bottom:20px;">
+</div>
+  <div class="d-flex justify-content-between flex-wrap" style="position:sticky; bottom:20px;">
     <button type="button" class="button vw-100 m-1 text-nowrap" style=" box-shadow: 0px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddTable">
       ADD TABLE
     </button>
     <%= link_to "BACK", owner_path, class: "button m-1 vw-100 text-nowrap text-center", style:"  box-shadow: 0px; color:white; text-decoration:none; border-radius:30px; border: 0;" %>
-    </div>
-</div>
+  </div>
   <%= render partial: "modal_table" %>
   <%= render partial: "modal_qr" %>
 </body>
