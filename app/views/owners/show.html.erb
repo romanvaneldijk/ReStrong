@@ -1,6 +1,9 @@
 <div class= "body" >
     <div class= "main-container">
     <div class="homepage-container">
+      <%= link_to(destroy_user_session_path, method: :delete, id:"log-out-button") do %>
+        <i class="fas fa-sign-out-alt fa-2x"></i>
+      <% end %>
       <h1 class= "restaurant-name">"Tico-Taco"</h1>
       <h3 class = "restaurant-subtitle">🌮 Taquería 🌮</h3>
         <div class="d-flex flex-column">
