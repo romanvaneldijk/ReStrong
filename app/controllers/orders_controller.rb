@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
       redirect_to owner_orders_path(table: @order.table.id, anchor: "heading#{@order.table.id}")
     else
       @order.update(status: "complete")
-      redirect_to order_user_dashboard_path(@order), notice: "Your order has been completed"
+      redirect_to order_user_dashboard_path(@order), notice: "Your order is being prepared"
     end
   end
 

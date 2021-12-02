@@ -25,7 +25,7 @@ puts "created user"
 burrito = Item.new(
   price: 9,
   name: "Burrito",
-  description: "Burritos are filled with beef, or pork, and includeingredients such as rice, cooked beans, vegetables such as lettuce and tomatoes, cheese, and condiments",
+  description: "Burritos are filled with beef, or pork, and include ingredients such as rice, cooked beans, vegetables such as lettuce and tomatoes, cheese, and condiments.",
   )
   file = URI.open("https://media.istockphoto.com/photos/sausage-and-egg-breakfast-burrito-picture-id1303481589?b=1&k=20&m=1303481589&s=170667a&w=0&h=qOuCRxV7QjXdTNcJC_xF1oPvDARWQI6ayI3L3qcenc0=")
   burrito.photo.attach(io: file, filename: "burrito_dish.jpg", content_type: 'image/jpg')
@@ -53,7 +53,7 @@ quesadilla = Item.new(
 tamale = Item.new(
   price: 7.50,
   name: "Tamale",
-  description: "Made of masa or dough, which is steamed in a corn leaf or banana leaf. It is filled with meats, cheeses, fruits, vegetables ",
+  description: "Made of masa or dough, which is steamed in a corn leaf or banana leaf. It is filled with meats, cheeses, fruits, vegetables.",
   )
   file = URI.open("https://media.istockphoto.com/photos/beef-tamales-picture-id490484110?b=1&k=20&m=490484110&s=170667a&w=0&h=k5ivKWwUcxrgTHW7YGeo_X4MpzgboesQzykdg2alhoE=")
   tamale.photo.attach(io: file, filename: "tamale_dish.jpg", content_type: 'image/jpg')
