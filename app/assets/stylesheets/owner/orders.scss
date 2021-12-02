@@ -8,13 +8,14 @@
   height: 100%;
   // padding-bottom: 30%;
   min-height: 100vh;
+
 }
 
 .card-header {
   background-color: $grayx;
   border-top-left-radius: 9px !important;
   border-top-right-radius: 9px !important;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .open-card {
@@ -25,4 +26,23 @@
 
 .d-content {
   display: contents;
+}
+
+.card-body-preparing {
+  background: #a26769;
+  opacity: 0.9;
+}
+
+.card-body-ready{
+  background: #3a9e53;
+  opacity: 0.9;
+  // border-bottom-left-radius: 4px;
+  // border-bottom-right-radius: 4px;
+}
+
+.center-p-tag {
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }

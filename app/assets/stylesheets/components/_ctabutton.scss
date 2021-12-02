@@ -64,7 +64,7 @@
   height: 100%;
   background: #a26769;
   border-radius: 10px;
-  color: white;
+  color: #a26769;
   border: none;
   font-size: small;
   align-items: center;
@@ -95,4 +95,11 @@
   color: white;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.ready {
+  border: none;
+  border-radius: 6px;
+  background: none;
+  text-decoration: underline;
 }
