@@ -5,7 +5,9 @@
     <h1 class= "order-title">TABLE</h1>
     <div class= "emoji_owner">🥑</div>
   </div>
-  <div class="overflow-auto" style="margin-top: 50px;" >
+  <div class="d-flex flex-column align-items-between" style="height:65vh;">
+
+  <div class="overflow-auto" style="margin-top: 50px; max-height:60vh" >
   <% i = 0 %>
     <% @tables.each do |table| %>
       <div id="accordion">
@@ -37,12 +39,14 @@
   </div>
 
 </div>
-  <div class="d-flex justify-content-between flex-wrap pb-2" style="position:sticky; bottom:0px; background-color: #084C61">
+<div class="d-flex justify-content-between flex-wrap" style=" background-color: #084C61">
     <button type="button" class="button vw-100 m-1 text-nowrap" style=" box-shadow: 0px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddTable">
       ADD TABLE
     </button>
     <%= link_to "BACK", owner_path, class: "button m-1 vw-100 text-nowrap text-center", style:"  box-shadow: 0px; color:white; text-decoration:none; border-radius:30px; border: 0;" %>
-  </div>
+</div>
+</div>
   <%= render partial: "modal_table" %>
   <%= render partial: "modal_qr" %>
+
 </body>
