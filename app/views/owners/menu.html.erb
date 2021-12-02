@@ -3,7 +3,9 @@
     <h1 class= "order-title">MY MENU</h1>
     <div class= "emoji_owner">🥑</div>
   </div>
-  <div class="mt-5 vh-20 scroll">
+  <div class="d-flex flex-column align-items-between" style="height:65vh;">
+
+  <div class="overflow-auto" style="margin-top: 50px; max-height:60vh" >
   <% i = 0 %>
     <% @items.each do |item| %>
       <div id="accordion">
@@ -45,10 +47,12 @@
     <% end %>
 
   </div>
-    <div class="d-flex justify-content-center flex-wrap m-2" style="position:fixed;">
-    <button type="button" class="button vw-100 text-nowrap" style=" height:51px; box-shadow: 0px; bottom: 20px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddItem">
+  <div class="d-flex justify-content-center flex-wrap" id="my-menu-buttons-owner" style="position:fixed; bottom: -15px; padding-bottom: 15px; background-color:#084C61">
+    <button type="button" class="new-item-button vw-94 text-nowrap" style=" height:51px; width:330px; bottom: 20px; color:white; text-decoration:none; border-radius:30px; border: 0;" data-toggle="modal" data-target="#AddItem">
       NEW ITEM
     </button>
-    </div>
+  <%= link_to "BACK", owner_path, class: "new-item-button m-1 vw-94 text-nowrap text-center", style:" color:white; width:330px; text-decoration:none; border-radius:30px; border: 0;" %>
+  </div>
+</div>
   <%= render partial: "modal_item" %>
 </div>
