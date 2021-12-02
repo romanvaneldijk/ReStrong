@@ -1,5 +1,8 @@
   <div class="cards">
   <div class="menu">
+    <%= link_to(destroy_user_session_path, method: :delete, id:"log-out-button") do %>
+      <i class="fas fa-sign-out-alt fa-2x"></i>
+    <% end %>
     <strong><h1>Menu</h1></strong>
   </div>
 
