@@ -58,7 +58,7 @@
                 <%= simple_form_for(order) do |f| %>
                   <div class="row ready-row" id="row" style="margin-top: 20px; margin-bottom: 5px;">
                     <p> Order <strong><%= order.id %></strong> <br>
-                    <em>ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago</em>
+                    <em style="font-size: smaller;">ordered <%= time_ago_in_words(order.created_at, include_seconds: true) %> ago</em>
                     </p>
                     <%= f.submit "Ready?", class: "button-submit-form", method: :patch, remote: true,
                     data: { disable_button_target: 'button',
