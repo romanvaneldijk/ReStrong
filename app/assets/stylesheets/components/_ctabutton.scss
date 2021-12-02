@@ -61,13 +61,14 @@
 
 .button-submit-form {
   padding: 7px 9px;
-  height: 100%;
-  background: #a26769;
+  // height: 100%;
+  background: #2a9d8f;
   border-radius: 10px;
   color: white;
   border: none;
   font-size: small;
   align-items: center;
+
 }
 
 .disabled {
@@ -95,4 +96,17 @@
   color: white;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.ready {
+  border: none;
+  border-radius: 6px;
+  background: none;
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.ready-row {
+  align-items: baseline;
+  justify-content: space-between;
 }
