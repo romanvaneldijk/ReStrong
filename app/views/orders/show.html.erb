@@ -23,7 +23,7 @@
                   <%= item_name %>
                 </div>
                 <div class="col-8 text-right">
-                  <strong class="text-right"><%= (price * quantity).round(2) %>€</strong>
+                  <strong class="text-right">€<%= (price * quantity).round(2) %></strong>
                 </div>
               </div>
               <div class="row pt-2">
@@ -46,7 +46,7 @@
         </div>
       <% end %>
       <div class="d-flex justify-content-between m-3">
-        <p>Total:</p><%= "#{(@order.items.sum(:price)).round(2)}€" %>
+        <p>Total:</p><%= "€#{(@order.items.sum(:price)).round(2)}" %>
       </div>
     </div>
 
